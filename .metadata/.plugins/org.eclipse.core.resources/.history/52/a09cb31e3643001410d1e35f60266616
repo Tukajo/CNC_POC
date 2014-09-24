@@ -1,0 +1,9 @@
+
+public class MachineProfile {
+	Strng profileName;
+	Public void MachineProfile(String profileName){
+		
+	}
+	
+	
+}

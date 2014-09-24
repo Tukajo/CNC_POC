@@ -1,0 +1,22 @@
+1411481630532	Rename type 'profile_grid_fragment'
+1411481642948	Rename type 'gridlayout_fragment'
+1411481659883	Rename resource 'profile_grid_fragment_layout.xml'
+1411486222111	Move compilation unit
+1411487712759	Move compilation unit
+1411487803108	Rename field 'textView1'
+1411488039327	Extracts string 'null' into R.string.Name
+1411488057236	Extracts string 'null' into R.string.enterprofilenameheader
+1411488071787	Rename field 'editText1'
+1411488552178	Extracts string 'null' into R.string.createbuttontext
+1411488597349	Rename field 'button1'
+1411488611424	Extracts string 'null' into R.string.cancelbuttontext
+1411488802606	Extracts string 'null' into R.string.profilenamehint
+1411499985851	Extracts string 'null' into R.string.profilenameinspectionheader
+1411500043798	Extracts string 'null' into R.string.profileinspectioneditbutton
+1411500086508	Extracts string 'null' into R.string.profileinspectionclosebutton
+1411500500799	Rename resource 'profile_inspection_layout.xml'
+1411500593567	Rename field 'text'
+1411500990757	Delete element
+1411502972562	Rename field 'tableRow2'
+1411503158293	Rename field 'textView1'
+1411503278920	Extracts string 'null' into R.string.pickcolorbutton

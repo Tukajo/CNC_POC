@@ -1,0 +1,34 @@
+package com.nanospark.cnc;
+
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.GridView;
+import android.widget.ListAdapter;
+
+public class GridLayout_Fragment extends Fragment {
+
+	@Override
+	public View onCreateView(LayoutInflater inflater,
+			@Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+		
+		
+		GridView gridview = (GridView) findViewById(R.id.gridView1);
+	    gridview.setAdapter(new ListAdapter());
+
+	    gridview.setOnItemClickListener(new OnItemClickListener() {
+	        public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
+	            Toast.makeText(HelloGridView.this, "" + position, Toast.LENGTH_SHORT).show();
+	        }
+	    });
+		
+		
+		return inflater
+				.inflate(R.layout.grid_fragment_layout, container, false);
+	}
+
+	
+}

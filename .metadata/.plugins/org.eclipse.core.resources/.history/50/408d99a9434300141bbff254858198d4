@@ -1,0 +1,101 @@
+package com.nanospark.cnc;
+
+import java.util.ArrayList;
+
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
+import android.widget.Button;
+import android.widget.GridView;
+import android.widget.TextView;
+
+public class GridLayout_Fragment extends Fragment {
+	View rootView;
+	GridView gridView;
+	GlobalData globaldata = GlobalData.getInstance();
+	Button addProfileButton;
+
+	@Override
+	public View onCreateView(LayoutInflater inflater,
+			@Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+		rootView = inflater.inflate(R.layout.grid_fragment_layout, container,
+				false);
+		addProfileButton = (Button) rootView
+				.findViewById(R.id.addProfileButton);
+
+		addProfileButton.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+
+				Intent myProfileCreateActivity = new Intent(getActivity(),
+						ProfileCreateActivity.class);
+
+				startActivity(myProfileCreateActivity);
+
+			}
+		});
+
+		   CustomGrid adapter = new CustomGrid(getActivity(), globaldata.getMachineProfileList());
+		    gridView =(GridView) rootView.findViewById(R.id.gridView1);
+		        gridView.setAdapter(adapter);
+		     
+
+		return rootView;
+	}
+
+	public class CustomGrid extends BaseAdapter {
+		private Context mContext;
+		private ArrayList<MachineProfile> profileList;
+
+		public CustomGrid(Context c, ArrayList<MachineProfile> profileList) {
+			mContext = c;
+			this.profileList = profileList;
+		}
+
+		@Override
+		public int getCount() {
+			// TODO Auto-generated method stub
+			return profileList.size() - 1;
+		}
+
+		@Override
+		public MachineProfile getItem(int position) {
+			// TODO Auto-generated method stub
+			return profileList.get(position);
+		}
+
+		@Override
+		public long getItemId(int position) {
+			// TODO Auto-generated method stub
+			return 0;
+		}
+
+		@Override
+		public View getView(int position, View convertView, ViewGroup parent) {
+			// TODO Auto-generated method stub
+			View grid;
+			LayoutInflater inflater = (LayoutInflater) mContext
+					.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+			if (convertView == null) {
+				grid = new View(mContext);
+				grid = inflater.inflate(R.layout.grid_single, null);
+				TextView textView = (TextView) grid
+						.findViewById(R.id.grid_text);
+
+				textView.setText(profileList.get(position).getProfileName());
+
+			} else {
+				grid = (View) convertView;
+			}
+			return grid;
+		}
+	}
+}
