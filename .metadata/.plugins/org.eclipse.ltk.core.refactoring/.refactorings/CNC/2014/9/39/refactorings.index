@@ -20,3 +20,7 @@
 1411502972562	Rename field 'tableRow2'
 1411503158293	Rename field 'textView1'
 1411503278920	Extracts string 'null' into R.string.pickcolorbutton
+1411662619771	Rename field 'button1'
+1411662631417	Extracts string 'null' into R.string.dialogButtonEditText
+1411662727108	Extracts string 'null' into R.string.currentrgbvaldialogtext
+1411663396661	Rename field 'textView1'

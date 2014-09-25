@@ -282,8 +282,10 @@ int id clip_vertical 0x7f08000e
 int id collapseActionView 0x7f08001f
 int id colorPicker 0x7f08004f
 int id createbutton 0x7f08005a
+int id currentRGBValTV 0x7f08005c
 int id default_activity_button 0x7f080039
 int id dialog 0x7f080020
+int id dialogButtonEdit 0x7f08005d
 int id dialogButtonOK 0x7f08005e
 int id disableHome 0x7f08001a
 int id dropdown 0x7f080021
@@ -313,7 +315,6 @@ int id never 0x7f08001b
 int id none 0x7f080022
 int id normal 0x7f080012
 int id pickcolor 0x7f080058
-int id profile_inspection_dialog_name 0x7f08005d
 int id profilenameedittext 0x7f080056
 int id progress_circular 0x7f080029
 int id progress_horizontal 0x7f08002a
@@ -340,7 +341,6 @@ int id tabMode 0x7f080014
 int id tableRow1 0x7f080054
 int id tableRow2 0x7f080057
 int id tableRow3 0x7f080059
-int id tablerow4 0x7f08005c
 int id title 0x7f08003c
 int id top 0x7f080004
 int id top_action_bar 0x7f080031
@@ -407,6 +407,8 @@ int string app_name 0x7f060000
 int string button_label 0x7f060001
 int string cancelbuttontext 0x7f06001a
 int string createbuttontext 0x7f060019
+int string currentrgbvaldialogtext 0x7f060021
+int string dialogButtonEditText 0x7f060020
 int string enterprofilenameheader 0x7f060018
 int string pickcolorbutton 0x7f06001f
 int string pref_name 0x7f060002

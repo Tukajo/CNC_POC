@@ -17,6 +17,7 @@ import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.GridView;
+import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -64,13 +65,17 @@ public class GridLayout_Fragment extends Fragment {
 				dialog.setContentView(R.layout.profile_inspection_dialog);
 				dialog.setTitle(globaldata.getMachineProfileList().get(position).getProfileName());
 	 
-				// set the custom dialog components - text, image and button
-				TextView text = (TextView) dialog.findViewById(R.id.profile_inspection_dialog_name);
-				text.setText("Android custom dialog example!");
 			
-				Button dialogButton = (Button) dialog.findViewById(R.id.dialogButtonOK);
+				Button dialogButtonOK = (Button) dialog.findViewById(R.id.dialogButtonOK);
+				Button dialogButtonEdit = (Button) dialog.findViewById(R.id.dialogButtonEdit);
+				TextView RGBTV = (TextView) dialog.findViewById(R.id.currentRGBValTV);
+				TableRow RGBTR = (TableRow) dialog.findViewById(R.id.tableRow1);
+				
+				RGBTV.setText(globaldata.getMachineProfileList().get(position).getRGBVals().toString());
+				RGBTR.setBackgroundColor(globaldata.getMachineProfileList().get(position).getRGBVals().toColor());
+				
 				// if button is clicked, close the custom dialog
-				dialogButton.setOnClickListener(new View.OnClickListener() {
+				dialogButtonOK.setOnClickListener(new View.OnClickListener() {
 					@Override
 					public void onClick(View v) {
 						dialog.dismiss();
@@ -120,7 +125,7 @@ public class GridLayout_Fragment extends Fragment {
 				grid = inflater.inflate(R.layout.grid_single, null);
 				TextView textView = (TextView) grid
 						.findViewById(R.id.grid_text);
-
+				grid.setBackgroundColor(profileList.get(position).getRGBVals().toColor());
 				textView.setText(profileList.get(position).getProfileName());
 
 			} else {

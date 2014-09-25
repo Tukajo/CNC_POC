@@ -1318,8 +1318,10 @@ containing a value of this type.
         public static final int collapseActionView=0x7f08001f;
         public static final int colorPicker=0x7f08004f;
         public static final int createbutton=0x7f08005a;
+        public static final int currentRGBValTV=0x7f08005c;
         public static final int default_activity_button=0x7f080039;
         public static final int dialog=0x7f080020;
+        public static final int dialogButtonEdit=0x7f08005d;
         public static final int dialogButtonOK=0x7f08005e;
         public static final int disableHome=0x7f08001a;
         public static final int dropdown=0x7f080021;
@@ -1349,7 +1351,6 @@ containing a value of this type.
         public static final int none=0x7f080022;
         public static final int normal=0x7f080012;
         public static final int pickcolor=0x7f080058;
-        public static final int profile_inspection_dialog_name=0x7f08005d;
         public static final int profilenameedittext=0x7f080056;
         public static final int progress_circular=0x7f080029;
         public static final int progress_horizontal=0x7f08002a;
@@ -1376,7 +1377,6 @@ containing a value of this type.
         public static final int tableRow1=0x7f080054;
         public static final int tableRow2=0x7f080057;
         public static final int tableRow3=0x7f080059;
-        public static final int tablerow4=0x7f08005c;
         public static final int title=0x7f08003c;
         public static final int top=0x7f080004;
         public static final int top_action_bar=0x7f080031;
@@ -1500,6 +1500,8 @@ containing a value of this type.
         public static final int button_label=0x7f060001;
         public static final int cancelbuttontext=0x7f06001a;
         public static final int createbuttontext=0x7f060019;
+        public static final int currentrgbvaldialogtext=0x7f060021;
+        public static final int dialogButtonEditText=0x7f060020;
         public static final int enterprofilenameheader=0x7f060018;
         public static final int pickcolorbutton=0x7f06001f;
         public static final int pref_name=0x7f060002;

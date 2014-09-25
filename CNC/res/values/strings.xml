@@ -17,5 +17,7 @@
     <string name="profileinspectioneditbutton">edit</string>
     <string name="profileinspectionclosebutton">close</string>
     <string name="pickcolorbutton">Pick Color</string>
+    <string name="dialogButtonEditText">Edit</string>
+    <string name="currentrgbvaldialogtext">RGB:</string>
 
 </resources>
