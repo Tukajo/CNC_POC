@@ -5,22 +5,17 @@
 
     <TableRow
         android:id="@+id/tableRow1"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_gravity="center"
-        android:layout_weight="1" >
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left">
 
-        <TextView
-            android:id="@+id/enterprofilenameheader"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/enterprofilenameheader"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <EditText
             android:id="@+id/profilenameedittext"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:layout_weight="3.0"
             android:ems="10"
             android:hint="@string/profilenamehint" >
 
@@ -31,9 +26,8 @@
     <TableRow
         android:id="@+id/tableRow2"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_gravity="center"
-        android:layout_weight="1" >
+        android:layout_height="wrap_content"
+        android:layout_gravity="center" >
 
         <Button
             android:id="@+id/pickcolor"
@@ -42,28 +36,42 @@
             android:layout_gravity="center"
             android:layout_weight="1"
             android:text="@string/pickcolorbutton" />
-
     </TableRow>
 
     <TableRow
         android:id="@+id/tableRow3"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_weight="1" >
+        android:layout_height="wrap_content" >
 
-        <Button
-            android:id="@+id/createbutton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/createbuttontext" />
+        <Spinner
+            android:id="@+id/ProfileCreationContactSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" >
 
         <Button
             android:id="@+id/cancelbutton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
             android:layout_weight="1"
             android:text="@string/cancelbuttontext" />
+
+        <Button
+            android:id="@+id/createbutton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:text="@string/createbuttontext" />
+
     </TableRow>
 
 </TableLayout>

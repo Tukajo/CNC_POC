@@ -1,0 +1,29 @@
+package com.nanospark.cnc;
+public class MachineProfile {
+	String profileName;
+	RGBClass RGBVals;
+	ContactInfo attachedContact;
+
+	public MachineProfile(String profileName, RGBClass RGBVals, ContactInfo attachedContact) {
+		this.profileName = profileName;
+		this.RGBVals = RGBVals;
+		this.attachedContact = attachedContact;
+	}
+
+	public String getProfileName() {
+		return profileName;
+	}
+
+	public void setProfileName(String profileName) {
+		this.profileName = profileName;
+	}
+
+	public RGBClass getRGBVals() {
+		return RGBVals;
+	}
+
+	public void setRGBVals(RGBClass rGBVals) {
+		RGBVals = rGBVals;
+	}
+	
+}

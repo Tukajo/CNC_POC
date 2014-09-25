@@ -4,9 +4,10 @@ import java.util.ArrayList;
 
 public class GlobalData {
 	private static GlobalData instance = null;
-	
-	//ArrayLists of Data.
+
+	// ArrayLists of Data.
 	public ArrayList<MachineProfile> machineProfileList = new ArrayList<MachineProfile>();
+	public ArrayList<ContactInfo> contactInfoList = new ArrayList<ContactInfo>();
 
 	protected GlobalData() {
 		// Exists only to defeat instantiation.
@@ -23,9 +24,17 @@ public class GlobalData {
 		return machineProfileList;
 	}
 
-	public void setMachineProfileList(ArrayList<MachineProfile> machineProfileList) {
+	public void setMachineProfileList(
+			ArrayList<MachineProfile> machineProfileList) {
 		this.machineProfileList = machineProfileList;
 	}
-	
-	
+
+	public ArrayList<ContactInfo> getContactInfoList() {
+		return contactInfoList;
+	}
+
+	public void setContactInfoList(ArrayList<ContactInfo> contactInfoList) {
+		this.contactInfoList = contactInfoList;
+	}
+
 }

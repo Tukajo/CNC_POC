@@ -18,6 +18,7 @@ public class MainActivity extends ActionBarActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+
 		//insert the initial fragment for when the app boots.
 		transaction = transactionManager.beginTransaction();
 		transaction.replace(R.id.fragment_frame, replaceableFragment);
@@ -59,7 +60,11 @@ public class MainActivity extends ActionBarActivity {
 	}
 
 	private void openContacts() {
-
+		replaceableFragment = new ContactList_Fragment();
+		transaction = transactionManager.beginTransaction();
+		transaction.replace(R.id.fragment_frame, replaceableFragment);
+		transaction.addToBackStack(null);
+		transaction.commit();
 	}
 
 	private void openHome() {

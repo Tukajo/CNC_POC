@@ -1,0 +1,15 @@
+package com.nanospark.cnc;
+
+public class ContactInfo {
+
+	String phoneNum;
+	String fName;
+	String lName;
+	String email;
+	String Carrier;
+	
+	public ContactInfo(){
+		
+	}
+	
+}

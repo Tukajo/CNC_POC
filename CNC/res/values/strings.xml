@@ -19,5 +19,17 @@
     <string name="pickcolorbutton">Pick Color</string>
     <string name="dialogButtonEditText">Edit</string>
     <string name="currentrgbvaldialogtext">RGB:</string>
-
+    <string name="addListItemButton">Add New</string>
+    <string name="contactlayoutnametvtext">Enter Name:</string>
+    <string name="contactlayoutenternamehint">Firstname Lastname</string>
+    <string name="contactlayoutphonetvtext">Enter a phone #:</string>
+    <string name="contactcreationpageheader">Create New Contact</string>
+	<string-array name="carrier_options">
+	    <item>ATT</item>
+	    <item>Verizon</item>
+	    <item>Boost-Mobile</item>
+	    <item>T-Mobile</item>
+	    <item>Sprint</item>
+	</string-array>
+    
 </resources>

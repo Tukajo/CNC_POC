@@ -16,6 +16,9 @@ public final class R {
         public static final int abc_slide_out_bottom=0x7f040004;
         public static final int abc_slide_out_top=0x7f040005;
     }
+    public static final class array {
+        public static final int carrier_options=0x7f0c0000;
+    }
     public static final class attr {
         /**  Custom divider drawable to use for elements in the action bar. 
          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
@@ -1282,8 +1285,11 @@ containing a value of this type.
         public static final int abc_textfield_searchview_right_holo_dark=0x7f020055;
         public static final int abc_textfield_searchview_right_holo_light=0x7f020056;
         public static final int ic_launcher=0x7f020057;
+        public static final int wallpaper=0x7f020058;
+        public static final int wallpaper2=0x7f020059;
     }
     public static final class id {
+        public static final int ProfileCreationContactSpinner=0x7f08006c;
         public static final int action_bar=0x7f08002d;
         public static final int action_bar_activity_content=0x7f080026;
         public static final int action_bar_container=0x7f08002c;
@@ -1291,24 +1297,25 @@ containing a value of this type.
         public static final int action_bar_root=0x7f08002b;
         public static final int action_bar_subtitle=0x7f080034;
         public static final int action_bar_title=0x7f080033;
-        public static final int action_contacts=0x7f080061;
+        public static final int action_contacts=0x7f080073;
         public static final int action_context_bar=0x7f08002e;
-        public static final int action_events=0x7f080060;
-        public static final int action_help=0x7f080063;
-        public static final int action_home=0x7f08005f;
+        public static final int action_events=0x7f080072;
+        public static final int action_help=0x7f080075;
+        public static final int action_home=0x7f080071;
         public static final int action_menu_divider=0x7f080027;
         public static final int action_menu_presenter=0x7f080028;
         public static final int action_mode_close_button=0x7f080035;
-        public static final int action_settings=0x7f080062;
+        public static final int action_settings=0x7f080074;
         public static final int activity_chooser_view_content=0x7f080036;
-        public static final int addProfileButton=0x7f080052;
+        public static final int addListItem=0x7f080065;
+        public static final int addProfileButton=0x7f080068;
         public static final int alignBounds=0x7f080002;
         public static final int alignMargins=0x7f080003;
         public static final int always=0x7f08001d;
         public static final int beginning=0x7f080023;
         public static final int bottom=0x7f080005;
         public static final int button=0x7f08004e;
-        public static final int cancelbutton=0x7f08005b;
+        public static final int cancelbutton=0x7f08006e;
         public static final int center=0x7f08000c;
         public static final int center_horizontal=0x7f08000a;
         public static final int center_vertical=0x7f080008;
@@ -1317,25 +1324,37 @@ containing a value of this type.
         public static final int clip_vertical=0x7f08000e;
         public static final int collapseActionView=0x7f08001f;
         public static final int colorPicker=0x7f08004f;
-        public static final int createbutton=0x7f08005a;
-        public static final int currentRGBValTV=0x7f08005c;
+        public static final int contactCarrierSpinner=0x7f08005c;
+        public static final int contactEmailET=0x7f080059;
+        public static final int contactInspectCarrierTV=0x7f080062;
+        public static final int contactInspectEmailTV=0x7f080061;
+        public static final int contactInspectNameTV=0x7f08006f;
+        public static final int contactInspectPhoneTV=0x7f080060;
+        public static final int contactLayoutCancelBtn=0x7f08005e;
+        public static final int contactLayoutCreateBtn=0x7f08005f;
+        public static final int contactNameET=0x7f080053;
+        public static final int contactPhoneET=0x7f080056;
+        public static final int contactlayoutcarrier=0x7f08005b;
+        public static final int contactlayoutemailtv=0x7f080058;
+        public static final int contactlayoutnametv=0x7f080052;
+        public static final int contactlayoutphonetv=0x7f080055;
+        public static final int createbutton=0x7f08006d;
         public static final int default_activity_button=0x7f080039;
         public static final int dialog=0x7f080020;
-        public static final int dialogButtonEdit=0x7f08005d;
-        public static final int dialogButtonOK=0x7f08005e;
+        public static final int dialogButtonEdit=0x7f080063;
+        public static final int dialogButtonOK=0x7f080064;
         public static final int disableHome=0x7f08001a;
         public static final int dropdown=0x7f080021;
         public static final int edit_query=0x7f080041;
         public static final int end=0x7f080011;
-        public static final int enterprofilenameheader=0x7f080055;
         public static final int expand_activities_button=0x7f080037;
         public static final int expanded_menu=0x7f08003d;
         public static final int fill=0x7f08000d;
         public static final int fill_horizontal=0x7f08000b;
         public static final int fill_vertical=0x7f080009;
         public static final int fragment_frame=0x7f080050;
-        public static final int gridView1=0x7f080051;
-        public static final int grid_text=0x7f080053;
+        public static final int gridView1=0x7f080067;
+        public static final int grid_text=0x7f080069;
         public static final int home=0x7f080025;
         public static final int homeAsUp=0x7f080017;
         public static final int horizontal=0x7f080000;
@@ -1343,6 +1362,7 @@ containing a value of this type.
         public static final int ifRoom=0x7f08001c;
         public static final int image=0x7f080038;
         public static final int left=0x7f080006;
+        public static final int listItemTitleTV=0x7f080066;
         public static final int listMode=0x7f080013;
         public static final int list_item=0x7f08003a;
         public static final int middle=0x7f080024;
@@ -1350,8 +1370,9 @@ containing a value of this type.
         public static final int never=0x7f08001b;
         public static final int none=0x7f080022;
         public static final int normal=0x7f080012;
-        public static final int pickcolor=0x7f080058;
-        public static final int profilenameedittext=0x7f080056;
+        public static final int pickcolor=0x7f08006b;
+        public static final int profileAttachedContactNameTV=0x7f080070;
+        public static final int profilenameedittext=0x7f08006a;
         public static final int progress_circular=0x7f080029;
         public static final int progress_horizontal=0x7f08002a;
         public static final int radio=0x7f080040;
@@ -1374,9 +1395,11 @@ containing a value of this type.
         public static final int start=0x7f080010;
         public static final int submit_area=0x7f08004a;
         public static final int tabMode=0x7f080014;
-        public static final int tableRow1=0x7f080054;
-        public static final int tableRow2=0x7f080057;
-        public static final int tableRow3=0x7f080059;
+        public static final int tableRow1=0x7f080051;
+        public static final int tableRow2=0x7f080054;
+        public static final int tableRow3=0x7f080057;
+        public static final int tableRow4=0x7f08005a;
+        public static final int tableRow5=0x7f08005d;
         public static final int title=0x7f08003c;
         public static final int top=0x7f080004;
         public static final int top_action_bar=0x7f080031;
@@ -1440,14 +1463,18 @@ containing a value of this type.
         public static final int act_picker=0x7f03001a;
         public static final int act_pref=0x7f03001b;
         public static final int activity_main=0x7f03001c;
-        public static final int grid_fragment_layout=0x7f03001d;
-        public static final int grid_single=0x7f03001e;
-        public static final int profile_creation_layout=0x7f03001f;
-        public static final int profile_inspection_dialog=0x7f030020;
-        public static final int support_simple_spinner_dropdown_item=0x7f030021;
+        public static final int contact_creation_layout=0x7f03001d;
+        public static final int contact_inspection_dialog=0x7f03001e;
+        public static final int generic_list_fragment_layout=0x7f03001f;
+        public static final int generic_list_item_layout=0x7f030020;
+        public static final int grid_fragment_layout=0x7f030021;
+        public static final int grid_single=0x7f030022;
+        public static final int profile_creation_layout=0x7f030023;
+        public static final int profile_inspection_dialog=0x7f030024;
+        public static final int support_simple_spinner_dropdown_item=0x7f030025;
     }
     public static final class menu {
-        public static final int main=0x7f0c0000;
+        public static final int main=0x7f0d0000;
     }
     public static final class string {
         /**  Content description for the action bar "home" affordance. [CHAR LIMIT=NONE] 
@@ -1495,10 +1522,15 @@ containing a value of this type.
         public static final int action_help=0x7f060015;
         public static final int action_home=0x7f060011;
         public static final int action_settings=0x7f060012;
+        public static final int addListItemButton=0x7f060022;
         public static final int addNewProfileText=0x7f060016;
         public static final int app_name=0x7f060000;
         public static final int button_label=0x7f060001;
         public static final int cancelbuttontext=0x7f06001a;
+        public static final int contactcreationpageheader=0x7f060026;
+        public static final int contactlayoutenternamehint=0x7f060024;
+        public static final int contactlayoutnametvtext=0x7f060023;
+        public static final int contactlayoutphonetvtext=0x7f060025;
         public static final int createbuttontext=0x7f060019;
         public static final int currentrgbvaldialogtext=0x7f060021;
         public static final int dialogButtonEditText=0x7f060020;
@@ -1558,7 +1590,6 @@ containing a value of this type.
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
  Application theme. 
- All customizations that are NOT specific to a particular API-level can go here. 
          */
         public static final int AppTheme=0x7f070001;
         /**  Mimic text appearance in select_dialog_item.xml 

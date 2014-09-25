@@ -68,11 +68,14 @@ public class GridLayout_Fragment extends Fragment {
 			
 				Button dialogButtonOK = (Button) dialog.findViewById(R.id.dialogButtonOK);
 				Button dialogButtonEdit = (Button) dialog.findViewById(R.id.dialogButtonEdit);
-				TextView RGBTV = (TextView) dialog.findViewById(R.id.currentRGBValTV);
+				TextView RGBTV = (TextView) dialog.findViewById(R.id.contactInspectNameTV);
 				TableRow RGBTR = (TableRow) dialog.findViewById(R.id.tableRow1);
+				TextView profileAttachedContactTV = (TextView) dialog.findViewById(R.id.profileAttachedContactNameTV);
 				
+				profileAttachedContactTV.setText("Contact: " + globaldata.getMachineProfileList().get(position).getAttachedContact().getName());
 				RGBTV.setText(globaldata.getMachineProfileList().get(position).getRGBVals().toString());
 				RGBTR.setBackgroundColor(globaldata.getMachineProfileList().get(position).getRGBVals().toColor());
+			
 				
 				// if button is clicked, close the custom dialog
 				dialogButtonOK.setOnClickListener(new View.OnClickListener() {
@@ -126,6 +129,7 @@ public class GridLayout_Fragment extends Fragment {
 				TextView textView = (TextView) grid
 						.findViewById(R.id.grid_text);
 				grid.setBackgroundColor(profileList.get(position).getRGBVals().toColor());
+				grid.setAlpha((float).50);
 				textView.setText(profileList.get(position).getProfileName());
 
 			} else {

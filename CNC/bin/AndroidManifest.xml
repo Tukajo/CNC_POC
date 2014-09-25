@@ -26,6 +26,10 @@
             android:name=".ProfileCreateActivity"
             android:label="@string/profilecreationpageheader" >
         </activity>
+        <activity
+            android:name=".ContactCreateActivity"
+            android:label="@string/contactcreationpageheader">
+        </activity>
     </application>
 
 </manifest>

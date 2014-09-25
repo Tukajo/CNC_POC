@@ -24,3 +24,15 @@
 1411662631417	Extracts string 'null' into R.string.dialogButtonEditText
 1411662727108	Extracts string 'null' into R.string.currentrgbvaldialogtext
 1411663396661	Rename field 'textView1'
+1411671970168	Rename resource 'contactlist_fragment_layout.xml'
+1411671986115	Rename field 'listView1'
+1411672804242	Extracts string 'null' into R.string.addListItemButton
+1411673913192	Extracts string 'null' into R.string.contactlayoutnametvtext
+1411673974994	Extracts string 'null' into R.string.contactlayoutenternamehint
+1411674256831	Extracts string 'null' into R.string.contactlayoutphonetvtext
+1411674432125	Rename field 'editText1'
+1411674667626	Rename field 'textView1'
+1411674777089	Rename field 'spinner1'
+1411678677158	Rename field 'currentRGBValTV'
+1411679503130	Rename field 'spinner1'
+1411680007647	Rename field 'textView1'
