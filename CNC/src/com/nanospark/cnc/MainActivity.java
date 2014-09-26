@@ -13,6 +13,7 @@ public class MainActivity extends ActionBarActivity {
 	Fragment replaceableFragment = new GridLayout_Fragment();
 	FragmentManager transactionManager = getSupportFragmentManager();
 	FragmentTransaction transaction;
+	CustomIOIO customioio;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +24,10 @@ public class MainActivity extends ActionBarActivity {
 		transaction = transactionManager.beginTransaction();
 		transaction.replace(R.id.fragment_frame, replaceableFragment);
 		transaction.commit();
+		 customioio = (CustomIOIO) getApplicationContext();
+		 customioio.create();
+		 customioio.start();
+
 	}
 
 	@Override
