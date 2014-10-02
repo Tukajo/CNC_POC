@@ -2,6 +2,8 @@ package com.nanospark.cnc;
 
 import java.util.ArrayList;
 
+import android.widget.ArrayAdapter;
+
 public class GlobalData {
 	private static GlobalData instance = null;
 

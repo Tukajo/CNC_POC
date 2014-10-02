@@ -1,0 +1,7 @@
+package com.nanospark.cnc;
+
+import android.support.v4.app.Fragment;
+
+public class event_report_fragment extends Fragment {
+
+}

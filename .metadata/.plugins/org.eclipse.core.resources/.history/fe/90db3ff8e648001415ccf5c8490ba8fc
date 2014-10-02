@@ -1,0 +1,15 @@
+package com.nanospark.cnc;
+
+import java.util.Calendar;
+
+import android.text.format.Time;
+
+public class TimingConfig {
+	String frequency;
+	Time sendTime;
+	Calendar sendDate;
+	public TimingConfig() {
+
+	}
+
+}

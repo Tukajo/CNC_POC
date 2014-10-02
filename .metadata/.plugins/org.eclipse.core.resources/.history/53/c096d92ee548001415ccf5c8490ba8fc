@@ -1,0 +1,10 @@
+package com.nanospark.cnc;
+
+public class Pin {
+	String name;
+	int number;
+	String Type;
+	public Pin(String name, String Type, int number){
+		
+	}
+}

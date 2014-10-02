@@ -1,0 +1,14 @@
+package com.nanospark.cnc;
+
+public class Event {
+	String type;
+	Pin AssignedPin;
+	String TrackingType;
+	
+	public Event(String type, Pin AssignedPin){
+		this.type = type;
+		this.AssignedPin = AssignedPin;
+	}
+	
+	
+}

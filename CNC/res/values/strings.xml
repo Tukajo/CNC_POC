@@ -24,12 +24,37 @@
     <string name="contactlayoutenternamehint">Firstname Lastname</string>
     <string name="contactlayoutphonetvtext">Enter a phone #:</string>
     <string name="contactcreationpageheader">Create New Contact</string>
+        <string name="eventcreationpageheader">Create New Event</string>
 	<string-array name="carrier_options">
 	    <item>ATT</item>
 	    <item>Verizon</item>
 	    <item>Boost-Mobile</item>
 	    <item>T-Mobile</item>
 	    <item>Sprint</item>
+	</string-array>
+	<string-array  name="pin_choices">
+	    <item>1</item>
+	    <item>2</item>
+	    <item>3</item>
+	    <item>4</item>
+	    <item>5</item>
+	    <item>6</item>
+	    <item>7</item>
+	    <item>8</item>
+	    <item>9</item>
+	    <item>10</item>
+	    <item>11</item>
+	    <item>12</item>
+	    <item>13</item>
+	    <item>14</item>
+	    <item>15</item>
+	    <item>16</item>
+	</string-array>
+	<string-array  name="what_to_track_array">
+	    <item>% On</item>
+	    <item>% Off</item>
+	    <item># Of Instances On</item>
+	    <item># Of Instances Off</item>
 	</string-array>
     
 </resources>

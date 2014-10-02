@@ -47,7 +47,7 @@ public class ContactList_Fragment extends Fragment {
 				final Dialog dialog = new Dialog(getActivity());
 				dialog.setContentView(R.layout.contact_inspection_dialog);
 				dialog.setTitle(globaldata.getContactInfoList().get(position).getName());
-	 
+				final int myPosition = position;
 			
 				Button dialogButtonOK = (Button) dialog.findViewById(R.id.dialogButtonOK);
 				Button dialogButtonEdit = (Button) dialog.findViewById(R.id.dialogButtonEdit);
@@ -59,6 +59,17 @@ public class ContactList_Fragment extends Fragment {
 				contactEmailTV.setText("Email:" + globaldata.getContactInfoList().get(position).getEmail().toString());
 				contactCarrierTV.setText("Carrier: " + globaldata.getContactInfoList().get(position).getCarrier().toString());
 				contactPhoneTV.setText("Phone: " + globaldata.getContactInfoList().get(position).getPhoneNum().toString());
+				
+				
+				dialogButtonEdit.setOnClickListener(new View.OnClickListener(){
+					@Override
+					public void onClick(View v) {
+						Intent contactEditIntent = new Intent(getActivity(), ContactCreateActivity.class);
+						contactEditIntent.putExtra("edit", myPosition);
+						startActivity(contactEditIntent);
+					}
+				});
+				
 				
 				// if button is clicked, close the custom dialog
 				dialogButtonOK.setOnClickListener(new View.OnClickListener() {

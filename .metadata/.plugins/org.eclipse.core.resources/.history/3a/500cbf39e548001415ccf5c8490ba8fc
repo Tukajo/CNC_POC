@@ -1,0 +1,12 @@
+package com.nanospark.cnc;
+
+public class Event {
+	String type;
+	Pin assignedPin;
+	
+	public Event(String type, Pin pinChoice,){
+		
+	}
+	
+	
+}

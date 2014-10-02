@@ -1,0 +1,5 @@
+package com.nanospark.cnc;
+
+public class event_report_fragment extends Fragment {
+
+}

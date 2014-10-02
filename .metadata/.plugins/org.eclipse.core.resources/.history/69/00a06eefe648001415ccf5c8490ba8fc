@@ -1,0 +1,11 @@
+package com.nanospark.cnc;
+
+public class TimingConfig {
+	String frequency;
+	Time sendTime;
+	Calendar sendDate;
+	public TimingConfig() {
+
+	}
+
+}

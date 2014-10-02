@@ -1,0 +1,27 @@
+package com.nanospark.cnc;
+
+import java.util.Calendar;
+
+import android.text.format.Time;
+
+public class Event {
+	String type;
+	Pin assignedPin;
+	String trackingType;
+	Calendar startDate;
+	Calendar endDate;
+	boolean watchAllDay;
+	Time startTime;
+	Time endTime;
+	
+	public Event(String type, Pin assignedPin, String trackingType, Calendar startDate, Calendar endDate, boolean watchAllDay,Time startTime, Time endTime,){
+		this.type = type;
+		this.assignedPin = assignedPin;
+		this.trackingType = trackingType;
+		this.startDate = startDate;
+		this.endDate = endDate;
+		this.watchAllDay = watchAllDay;
+	}
+	
+	
+}

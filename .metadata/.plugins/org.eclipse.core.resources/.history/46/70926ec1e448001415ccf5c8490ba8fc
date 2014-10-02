@@ -1,0 +1,8 @@
+package com.nanospark.cnc;
+
+public class Event {
+	String type;
+	
+	
+	
+}

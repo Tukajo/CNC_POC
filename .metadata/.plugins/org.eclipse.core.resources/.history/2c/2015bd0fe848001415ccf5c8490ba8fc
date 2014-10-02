@@ -1,0 +1,50 @@
+package com.nanospark.cnc;
+
+import java.util.ArrayList;
+
+public class GlobalData {
+	private static GlobalData instance = null;
+
+	// ArrayLists of Data.
+	public ArrayList<MachineProfile> machineProfileList = new ArrayList<MachineProfile>();
+	public ArrayList<ContactInfo> contactInfoList = new ArrayList<ContactInfo>();
+	public ArrayList<Pin> pinSelectionList = new ArrayList<Pin>();
+
+	protected GlobalData() {
+		// Exists only to defeat instantiation.
+	}
+
+	public static GlobalData getInstance() {
+		if (instance == null) {
+			instance = new GlobalData();
+		}
+		return instance;
+	}
+
+	public ArrayList<MachineProfile> getMachineProfileList() {
+		return machineProfileList;
+	}
+
+	public void setMachineProfileList(
+			ArrayList<MachineProfile> machineProfileList) {
+		this.machineProfileList = machineProfileList;
+	}
+
+	public ArrayList<ContactInfo> getContactInfoList() {
+		return contactInfoList;
+	}
+
+	public void setContactInfoList(ArrayList<ContactInfo> contactInfoList) {
+		this.contactInfoList = contactInfoList;
+	}
+
+	public ArrayList<Pin> getPinSelectionList() {
+		return pinSelectionList;
+	}
+
+	public void setPinSelectionList(ArrayList<Pin> pinSelectionList) {
+		this.pinSelectionList = pinSelectionList;
+	}
+	
+
+}

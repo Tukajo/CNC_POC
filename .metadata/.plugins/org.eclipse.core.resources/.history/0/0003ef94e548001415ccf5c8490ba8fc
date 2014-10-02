@@ -1,0 +1,16 @@
+package com.nanospark.cnc;
+
+public class Event {
+	String type;
+	Pin assignedPin;
+	String trackingType;
+	Calendar startDate;
+	
+	public Event(String type, Pin assignedPin, String trackingType){
+		this.type = type;
+		this.assignedPin = assignedPin;
+		this.trackingType = trackingType;
+	}
+	
+	
+}

@@ -13,7 +13,7 @@ public class MainActivity extends ActionBarActivity {
 	Fragment replaceableFragment = new GridLayout_Fragment();
 	FragmentManager transactionManager = getSupportFragmentManager();
 	FragmentTransaction transaction;
-	CustomIOIO customioio;
+	//CustomIOIO customioio;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -24,9 +24,9 @@ public class MainActivity extends ActionBarActivity {
 		transaction = transactionManager.beginTransaction();
 		transaction.replace(R.id.fragment_frame, replaceableFragment);
 		transaction.commit();
-		 customioio = (CustomIOIO) getApplicationContext();
+/*		 customioio = (CustomIOIO) getApplicationContext();
 		 customioio.create();
-		 customioio.start();
+		 customioio.start();*/
 
 	}
 
@@ -77,7 +77,6 @@ public class MainActivity extends ActionBarActivity {
 		transaction = transactionManager.beginTransaction();
 		transaction.replace(R.id.fragment_frame, replaceableFragment);
 		transaction.addToBackStack(null);
-
 		transaction.commit();
 	}
 
@@ -86,7 +85,11 @@ public class MainActivity extends ActionBarActivity {
 	}
 
 	private void openEvents() {
-
+		replaceableFragment = new EventList_Fragment();
+		transaction = transactionManager.beginTransaction();
+		transaction.replace(R.id.fragment_frame, replaceableFragment);
+		transaction.addToBackStack(null);
+		transaction.commit();
 	}
 
 	private void openSettings() {

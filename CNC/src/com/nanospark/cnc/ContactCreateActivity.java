@@ -1,5 +1,7 @@
 package com.nanospark.cnc;
 
+import java.util.ArrayList;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,7 +14,8 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-public class ContactCreateActivity extends Activity implements OnItemSelectedListener{
+public class ContactCreateActivity extends Activity implements
+		OnItemSelectedListener {
 	EditText nameET;
 	EditText phoneET;
 	EditText emailET;
@@ -21,7 +24,7 @@ public class ContactCreateActivity extends Activity implements OnItemSelectedLis
 	Spinner carrierSpinner;
 	GlobalData globaldata = GlobalData.getInstance();
 	String selectedSpinnerItem = null;
-
+	ArrayList<MachineProfile> assignedProfilesForContactList = new ArrayList<MachineProfile>();
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -32,6 +35,19 @@ public class ContactCreateActivity extends Activity implements OnItemSelectedLis
 		carrierSpinner = (Spinner) findViewById(R.id.contactCarrierSpinner);
 		contactCancelBtn = (Button) findViewById(R.id.contactLayoutCancelBtn);
 		contactCreateBtn = (Button) findViewById(R.id.contactLayoutCreateBtn);
+
+		// check to see if this is an edit event
+		Bundle extras = getIntent().getExtras();
+		if (extras != null) {
+			int position = extras.getInt("edit");
+
+			nameET.setText(globaldata.getContactInfoList().get(position)
+					.getName().toString());
+			phoneET.setText(globaldata.getContactInfoList().get(position)
+					.getPhoneNum().toString());
+			emailET.setText(globaldata.getContactInfoList().get(position)
+					.getEmail().toString());
+		}
 
 		contactCancelBtn.setOnClickListener(new View.OnClickListener() {
 
@@ -47,6 +63,21 @@ public class ContactCreateActivity extends Activity implements OnItemSelectedLis
 
 			@Override
 			public void onClick(View v) {
+				boolean contactInUse = false;
+				Bundle extras = getIntent().getExtras();
+				if (extras != null) {
+					int position = extras.getInt("edit");
+					
+				/*	//Check to see if contact is attached to any machine profiles
+					if(globaldata.getContactInfoList().get(position).getAssignedProfiles().equals(null)){
+						globaldata.getContactInfoList().remove(position);
+					}
+					else{
+						assignedProfilesForContactList = globaldata.getContactInfoList().get(position).getAssignedProfiles();
+						contactInUse=true;
+					}*/
+				}
+
 				if (!nameET.getText().toString().equals(null)
 						&& !nameET.getText().toString().equals("")
 						&& !phoneET.getText().toString().equals(null)
@@ -54,15 +85,14 @@ public class ContactCreateActivity extends Activity implements OnItemSelectedLis
 						&& !emailET.getText().toString().equals(null)
 						&& !emailET.getText().toString().equals("")
 						&& !selectedSpinnerItem.equals(null)) {
-
+				
 					globaldata.getContactInfoList().add(
 							new ContactInfo(phoneET.getText().toString(),
 									nameET.getText().toString(), emailET
 											.getText().toString(),
 									selectedSpinnerItem));
-					
-					Intent myReturnintent = new Intent(ContactCreateActivity.this,
-							MainActivity.class);
+					Intent myReturnintent = new Intent(
+							ContactCreateActivity.this, MainActivity.class);
 					startActivity(myReturnintent);
 				} else {
 					Toast.makeText(getBaseContext(),
@@ -71,11 +101,14 @@ public class ContactCreateActivity extends Activity implements OnItemSelectedLis
 				}
 			}
 		});
-		ArrayAdapter<CharSequence> carrierAdapter  = ArrayAdapter.createFromResource(this,R.array.carrier_options, android.R.layout.simple_spinner_item);
-		carrierAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-		
+		ArrayAdapter<CharSequence> carrierAdapter = ArrayAdapter
+				.createFromResource(this, R.array.carrier_options,
+						android.R.layout.simple_spinner_item);
+		carrierAdapter
+				.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
 		carrierSpinner.setAdapter(carrierAdapter);
-		
+
 		carrierSpinner.setOnItemSelectedListener(this);
 
 	}
@@ -84,11 +117,11 @@ public class ContactCreateActivity extends Activity implements OnItemSelectedLis
 	public void onItemSelected(AdapterView<?> parent, View view, int pos,
 			long id) {
 		selectedSpinnerItem = (String) parent.getItemAtPosition(pos);
-		
+
 	}
 
 	@Override
 	public void onNothingSelected(AdapterView<?> parent) {
-			
+
 	}
 }

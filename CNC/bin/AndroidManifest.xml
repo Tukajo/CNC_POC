@@ -31,6 +31,11 @@
             android:name=".ContactCreateActivity"
             android:label="@string/contactcreationpageheader">
         </activity>
+        <activity
+            android:name=".EventCreateActivity"
+            android:label="@string/eventcreationpageheader">
+        </activity>
+        
     </application>
 
 </manifest>

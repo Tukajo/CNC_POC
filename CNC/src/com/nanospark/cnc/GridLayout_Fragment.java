@@ -27,7 +27,8 @@ public class GridLayout_Fragment extends Fragment {
 	GlobalData globaldata = GlobalData.getInstance();
 	Button addProfileButton;
 	CustomGrid adapter;
-
+	ArrayList<MachineProfile> profileArrayList = new ArrayList<MachineProfile>();
+	DataWriter myDataManager = new DataWriter();
 	@Override
 	public View onCreateView(LayoutInflater inflater,
 			@Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -37,8 +38,10 @@ public class GridLayout_Fragment extends Fragment {
 		addProfileButton = (Button) rootView
 				.findViewById(R.id.addProfileButton);
 
+		
+		
 		addProfileButton.setOnClickListener(new View.OnClickListener() {
-
+			
 			@Override
 			public void onClick(View v) {
 
@@ -49,8 +52,8 @@ public class GridLayout_Fragment extends Fragment {
 
 			}
 		});
-		adapter = new CustomGrid(getActivity(),
-				globaldata.getMachineProfileList());
+		populateTable();
+		adapter = new CustomGrid(getActivity(), profileArrayList);
 		adapter.notifyDataSetChanged();
 		gridView.invalidateViews();
 		gridView.setAdapter(adapter);
@@ -63,20 +66,27 @@ public class GridLayout_Fragment extends Fragment {
 				// custom dialog
 				final Dialog dialog = new Dialog(getActivity());
 				dialog.setContentView(R.layout.profile_inspection_dialog);
-				dialog.setTitle(globaldata.getMachineProfileList().get(position).getProfileName());
-	 
-			
-				Button dialogButtonOK = (Button) dialog.findViewById(R.id.dialogButtonOK);
-				Button dialogButtonEdit = (Button) dialog.findViewById(R.id.dialogButtonEdit);
-				TextView RGBTV = (TextView) dialog.findViewById(R.id.contactInspectNameTV);
+				dialog.setTitle(globaldata.getMachineProfileList()
+						.get(position).getProfileName());
+
+				Button dialogButtonOK = (Button) dialog
+						.findViewById(R.id.dialogButtonOK);
+				Button dialogButtonEdit = (Button) dialog
+						.findViewById(R.id.dialogButtonEdit);
+				TextView RGBTV = (TextView) dialog
+						.findViewById(R.id.contactInspectNameTV);
 				TableRow RGBTR = (TableRow) dialog.findViewById(R.id.tableRow1);
-				TextView profileAttachedContactTV = (TextView) dialog.findViewById(R.id.profileAttachedContactNameTV);
-				
-				profileAttachedContactTV.setText("Contact: " + globaldata.getMachineProfileList().get(position).getAttachedContact().getName());
-				RGBTV.setText(globaldata.getMachineProfileList().get(position).getRGBVals().toString());
-				RGBTR.setBackgroundColor(globaldata.getMachineProfileList().get(position).getRGBVals().toColor());
-			
-				
+				TextView profileAttachedContactTV = (TextView) dialog
+						.findViewById(R.id.profileAttachedContactNameTV);
+
+				profileAttachedContactTV.setText("Contact: "
+						+ globaldata.getMachineProfileList().get(position)
+								.getAttachedContact().getName());
+				RGBTV.setText(globaldata.getMachineProfileList().get(position)
+						.getRGBVals().toString());
+				RGBTR.setBackgroundColor(globaldata.getMachineProfileList()
+						.get(position).getRGBVals().toColor());
+
 				// if button is clicked, close the custom dialog
 				dialogButtonOK.setOnClickListener(new View.OnClickListener() {
 					@Override
@@ -84,12 +94,10 @@ public class GridLayout_Fragment extends Fragment {
 						dialog.dismiss();
 					}
 				});
-	 
+
 				dialog.show();
-			  }
-			});
-
-
+			}
+		});
 
 		return rootView;
 	}
@@ -128,8 +136,9 @@ public class GridLayout_Fragment extends Fragment {
 				grid = inflater.inflate(R.layout.grid_single, null);
 				TextView textView = (TextView) grid
 						.findViewById(R.id.grid_text);
-				grid.setBackgroundColor(profileList.get(position).getRGBVals().toColor());
-				grid.setAlpha((float).50);
+				grid.setBackgroundColor(profileList.get(position).getRGBVals()
+						.toColor());
+				grid.setAlpha((float) .50);
 				textView.setText(profileList.get(position).getProfileName());
 
 			} else {
@@ -137,5 +146,16 @@ public class GridLayout_Fragment extends Fragment {
 			}
 			return grid;
 		}
+	}
+
+	public void populateTable() {
+		getActivity().runOnUiThread(new Runnable() {
+			public void run() {
+				for(MachineProfile myProfile : globaldata.getMachineProfileList()){
+					profileArrayList.add(myProfile);
+				}
+			}
+		});
+
 	}
 }

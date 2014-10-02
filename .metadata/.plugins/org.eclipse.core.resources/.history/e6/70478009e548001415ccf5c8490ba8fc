@@ -1,0 +1,8 @@
+package com.nanospark.cnc;
+
+public class Pin {
+
+	public Pin(){
+		
+	}
+}

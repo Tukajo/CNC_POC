@@ -66,14 +66,7 @@ public class CustomIOIO extends Application implements IOIOLooperProvider
 
 		@Override
 		public void loop() throws ConnectionLostException {
-			try {
-				
-				
-				this.wait(1000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+
 		}
 
 	}

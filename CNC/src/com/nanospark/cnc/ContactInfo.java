@@ -1,5 +1,7 @@
 package com.nanospark.cnc;
 
+import java.util.ArrayList;
+
 public class ContactInfo {
 
 	String phoneNum;
@@ -8,6 +10,7 @@ public class ContactInfo {
 	String name;
 	String email;
 	String carrier;
+
 	
 	public ContactInfo(String phoneNum, String name, String email, String carrier){
 		this.phoneNum = phoneNum;
@@ -70,6 +73,5 @@ public class ContactInfo {
 	public String toString() {
 		return name;
 	}
-	
-	
+
 }

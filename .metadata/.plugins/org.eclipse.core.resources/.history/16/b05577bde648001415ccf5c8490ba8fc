@@ -1,0 +1,9 @@
+package com.nanospark.cnc;
+
+public class TimingConfig {
+
+	public TimingConfig(){
+		
+	}
+	
+}

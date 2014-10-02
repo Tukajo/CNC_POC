@@ -1,9 +1,0 @@
-
-public class MachineProfile {
-	String profileName;
-	Public void MachineProfile(String profileName){
-		
-	}
-	
-	
-}

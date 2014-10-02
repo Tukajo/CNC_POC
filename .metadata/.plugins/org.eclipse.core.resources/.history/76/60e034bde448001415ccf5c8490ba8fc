@@ -1,0 +1,10 @@
+package com.nanospark.cnc;
+
+import android.R.string;
+
+public class Event {
+	string type;
+	
+	
+	
+}

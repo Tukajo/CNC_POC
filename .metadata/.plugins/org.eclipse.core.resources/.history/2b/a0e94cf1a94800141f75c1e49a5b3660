@@ -1,0 +1,15 @@
+package com.nanospark.cnc;
+
+import java.util.ArrayList;
+
+import com.google.gson.Gson;
+
+public class DataWriter {
+
+	public void SaveArrayToStorage(ArrayList array){
+		Gson gson = new Gson();
+		String json = gson.toJson(array);
+		
+	}
+	
+}
