@@ -99,7 +99,7 @@
         android:layout_weight="1" >
 
         <Button
-            android:id="@+id/contactLayoutCancelBtn"
+            android:id="@+id/eventCreateCancelBtn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
@@ -107,7 +107,7 @@
             android:text="Cancel" />
 
         <Button
-            android:id="@+id/contactLayoutCreateBtn"
+            android:id="@+id/eventCreateCreateBtn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"

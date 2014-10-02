@@ -7,7 +7,6 @@
 <fullyQualifiedTypeName name="android.support.v4.app.Fragment"/>
 <fullyQualifiedTypeName name="android.content.Intent"/>
 <fullyQualifiedTypeName name="android.widget.Spinner"/>
-<fullyQualifiedTypeName name="android.widget.Toast"/>
 <fullyQualifiedTypeName name="ioio.lib.api.IOIOConnection"/>
 <fullyQualifiedTypeName name="com.google.gson.Gson"/>
 <fullyQualifiedTypeName name="android.content.SharedPreferences.Editor"/>
@@ -16,11 +15,24 @@
 <fullyQualifiedTypeName name="android.R.string"/>
 <fullyQualifiedTypeName name="java.sql.Time"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
-<fullyQualifiedTypeName name="java.util.Calendar"/>
-<fullyQualifiedTypeName name="android.text.format.Time"/>
 <fullyQualifiedTypeName name="android.widget.Button"/>
 <fullyQualifiedTypeName name="android.widget.ToggleButton"/>
-<fullyQualifiedTypeName name="com.nanospark.cnc.R.id"/>
-<fullyQualifiedTypeName name="android.view.View.OnClickListener"/>
 <fullyQualifiedTypeName name="android.widget.CompoundButton.OnCheckedChangeListener"/>
+<fullyQualifiedTypeName name="android.widget.DatePicker"/>
+<fullyQualifiedTypeName name="android.widget.CalendarView"/>
+<fullyQualifiedTypeName name="android.widget.CalendarView.OnDateChangeListener"/>
+<fullyQualifiedTypeName name="android.app.DatePickerDialog"/>
+<fullyQualifiedTypeName name="android.app.DatePickerDialog.OnDateSetListener"/>
+<fullyQualifiedTypeName name="android.widget.Toast"/>
+<fullyQualifiedTypeName name="java.sql.Date"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="android.text.format.Time"/>
+<fullyQualifiedTypeName name="android.app.TimePickerDialog"/>
+<fullyQualifiedTypeName name="android.widget.NumberPicker"/>
+<fullyQualifiedTypeName name="android.view.View.OnClickListener"/>
+<fullyQualifiedTypeName name="com.nanospark.cnc.R.id"/>
+<fullyQualifiedTypeName name="android.widget.NumberPicker.OnScrollListener"/>
+<fullyQualifiedTypeName name="android.widget.NumberPicker.OnValueChangeListener"/>
+<fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
+<fullyQualifiedTypeName name="java.util.Calendar"/>
 </qualifiedTypeNameHistroy>

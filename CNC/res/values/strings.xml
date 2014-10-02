@@ -25,6 +25,7 @@
     <string name="contactlayoutphonetvtext">Enter a phone #:</string>
     <string name="contactcreationpageheader">Create New Contact</string>
         <string name="eventcreationpageheader">Create New Event</string>
+        
 	<string-array name="carrier_options">
 	    <item>ATT</item>
 	    <item>Verizon</item>
@@ -55,6 +56,11 @@
 	    <item>% Off</item>
 	    <item># Of Instances On</item>
 	    <item># Of Instances Off</item>
-	</string-array>
+	</string-array>	
+	
+	<string-array  name="what_format_choice_array">
+	    <item>CSV</item>
+	</string-array>	
+	
     
 </resources>

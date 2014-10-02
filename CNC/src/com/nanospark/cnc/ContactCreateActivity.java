@@ -33,8 +33,8 @@ public class ContactCreateActivity extends Activity implements
 		phoneET = (EditText) findViewById(R.id.contactPhoneET);
 		emailET = (EditText) findViewById(R.id.contactEmailET);
 		carrierSpinner = (Spinner) findViewById(R.id.contactCarrierSpinner);
-		contactCancelBtn = (Button) findViewById(R.id.contactLayoutCancelBtn);
-		contactCreateBtn = (Button) findViewById(R.id.contactLayoutCreateBtn);
+		contactCancelBtn = (Button) findViewById(R.id.eventCreateCancelBtn);
+		contactCreateBtn = (Button) findViewById(R.id.eventCreateCreateBtn);
 
 		// check to see if this is an edit event
 		Bundle extras = getIntent().getExtras();

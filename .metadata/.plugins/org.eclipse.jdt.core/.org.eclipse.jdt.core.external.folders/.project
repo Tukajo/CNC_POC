@@ -10,14 +10,14 @@
 	</natures>
 	<linkedResources>
 		<link>
-			<name>.link0</name>
+			<name>.link1</name>
 			<type>2</type>
-			<location>D:/Student Data/Desktop/adt-bundle-windows-x86_64-20140702/sdk/sources/android-20</location>
+			<location>C:/Users/Fresh/Desktop/android-sdk/sources/android-19</location>
 		</link>
 		<link>
 			<name>.link2</name>
 			<type>2</type>
-			<location>C:/Users/Fresh/Desktop/android-sdk/sources/android-19</location>
+			<location>D:/Student Data/Desktop/adt-bundle-windows-x86_64-20140702/sdk/sources/android-20</location>
 		</link>
 	</linkedResources>
 </projectDescription>
