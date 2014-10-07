@@ -1,9 +1,0 @@
-package com.nanospark.cnc;
-
-public class DataWriter {
-
-	public void SaveArrayToStorage(ArrayList array){
-		
-	}
-	
-}

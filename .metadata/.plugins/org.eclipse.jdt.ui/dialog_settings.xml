@@ -36,7 +36,7 @@
 		<item value="510" key="DIALOG_WIDTH"/>
 		<item value="1|Segoe UI|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
 		<item value="621" key="DIALOG_HEIGHT"/>
-		<item value="711" key="DIALOG_X_ORIGIN"/>
+		<item value="696" key="DIALOG_X_ORIGIN"/>
 		<item value="192" key="DIALOG_Y_ORIGIN"/>
 	</section>
 	<section name="RefactoringWizard.preview">

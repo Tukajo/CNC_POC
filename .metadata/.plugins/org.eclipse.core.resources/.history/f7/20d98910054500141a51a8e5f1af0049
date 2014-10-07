@@ -1,8 +1,0 @@
-package com.nanospark.cnc;
-
-import ioio.lib.util.IOIOLooperProvider;
-import android.app.Application;
-
-public class CustomIOIO extends Application implements IOIOLooperProvider {
-
-}

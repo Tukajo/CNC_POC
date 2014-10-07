@@ -1,7 +1,0 @@
-package com.nanospark.cnc;
-
-import android.app.Activity;
-
-public class EventCreateActivity extends Activity {
-
-}

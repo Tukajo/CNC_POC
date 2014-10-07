@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="android.graphics.Color"/>
 <fullyQualifiedTypeName name="android.widget.TableRow"/>
 <fullyQualifiedTypeName name="android.support.v4.app.ListFragment"/>
 <fullyQualifiedTypeName name="android.widget.ArrayAdapter"/>
@@ -23,16 +22,27 @@
 <fullyQualifiedTypeName name="android.widget.CalendarView.OnDateChangeListener"/>
 <fullyQualifiedTypeName name="android.app.DatePickerDialog"/>
 <fullyQualifiedTypeName name="android.app.DatePickerDialog.OnDateSetListener"/>
-<fullyQualifiedTypeName name="android.widget.Toast"/>
 <fullyQualifiedTypeName name="java.sql.Date"/>
 <fullyQualifiedTypeName name="java.util.Date"/>
 <fullyQualifiedTypeName name="android.text.format.Time"/>
 <fullyQualifiedTypeName name="android.app.TimePickerDialog"/>
 <fullyQualifiedTypeName name="android.widget.NumberPicker"/>
-<fullyQualifiedTypeName name="android.view.View.OnClickListener"/>
-<fullyQualifiedTypeName name="com.nanospark.cnc.R.id"/>
 <fullyQualifiedTypeName name="android.widget.NumberPicker.OnScrollListener"/>
 <fullyQualifiedTypeName name="android.widget.NumberPicker.OnValueChangeListener"/>
 <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
 <fullyQualifiedTypeName name="java.util.Calendar"/>
+<fullyQualifiedTypeName name="com.nanospark.cnc.R"/>
+<fullyQualifiedTypeName name="android.view.View.OnClickListener"/>
+<fullyQualifiedTypeName name="org.joda.time.LocalTime"/>
+<fullyQualifiedTypeName name="java.util.Locale"/>
+<fullyQualifiedTypeName name="org.joda.time.format.DateTimeFormat"/>
+<fullyQualifiedTypeName name="org.joda.time.format.DateTimeFormatter"/>
+<fullyQualifiedTypeName name="android.app.TimePickerDialog.OnTimeSetListener"/>
+<fullyQualifiedTypeName name="android.widget.Toast"/>
+<fullyQualifiedTypeName name="android.graphics.Color"/>
+<fullyQualifiedTypeName name="android.R"/>
+<fullyQualifiedTypeName name="android.R.layout"/>
+<fullyQualifiedTypeName name="com.nanospark.cnc.R.id"/>
+<fullyQualifiedTypeName name="android.widget.AdapterView.OnItemSelectedListener"/>
+<fullyQualifiedTypeName name="org.joda.time.LocalDate"/>
 </qualifiedTypeNameHistroy>
