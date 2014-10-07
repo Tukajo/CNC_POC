@@ -79,9 +79,9 @@ public class GridLayout_Fragment extends Fragment {
 				TextView profileAttachedContactTV = (TextView) dialog
 						.findViewById(R.id.profileAttachedContactNameTV);
 
-				profileAttachedContactTV.setText("Contact: "
+				profileAttachedContactTV.setText("Events Attached: "
 						+ globaldata.getMachineProfileList().get(position)
-								.getAttachedContact().getName());
+								.getAttachedEventsList().size());
 				RGBTV.setText(globaldata.getMachineProfileList().get(position)
 						.getRGBVals().toString());
 				RGBTR.setBackgroundColor(globaldata.getMachineProfileList()

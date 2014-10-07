@@ -119,9 +119,9 @@ public class event_report_fragment extends Fragment {
 		repeatThisReportTB = (ToggleButton) rootView
 				.findViewById(R.id.repeatreporttoggle);
 
-		startDateBtn.setText("Start Date: " + (startDate.getMonthOfYear())
+/*		startDateBtn.setText("Start Date: " + (startDate.getMonthOfYear())
 				+ "-" + (startDate.getDayOfMonth() - 1) + "-"
-				+ startDate.getYear());
+				+ startDate.getYear());*/
 
 		// Cancel the event creation screen if the user wants to.
 		cancelEventBtn.setOnClickListener(new View.OnClickListener() {

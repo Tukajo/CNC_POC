@@ -10,23 +10,28 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 public class MainActivity extends ActionBarActivity {
-	Fragment replaceableFragment = new GridLayout_Fragment();
-	FragmentManager transactionManager = getSupportFragmentManager();
+	GridLayout_Fragment profileGridFragment = new GridLayout_Fragment();
+	EventList_Fragment eventListFragment = new EventList_Fragment();
+	ContactList_Fragment contactListFragment = new ContactList_Fragment();
+	FragmentManager transactionManager;
 	FragmentTransaction transaction;
-	//CustomIOIO customioio;
+	CustomIOIO customioio;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		setTheme(R.style.AppTheme);
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
 		//insert the initial fragment for when the app boots.
+		 transactionManager = getSupportFragmentManager();
 		transaction = transactionManager.beginTransaction();
-		transaction.replace(R.id.fragment_frame, replaceableFragment);
+		transaction.add(R.id.fragment_frame, profileGridFragment);
+		transaction.addToBackStack(null);
 		transaction.commit();
-/*		 customioio = (CustomIOIO) getApplicationContext();
+		 customioio = (CustomIOIO) getApplicationContext();
 		 customioio.create();
-		 customioio.start();*/
+		 customioio.setTheme(R.style.AppTheme);
 
 	}
 
@@ -65,17 +70,17 @@ public class MainActivity extends ActionBarActivity {
 	}
 
 	private void openContacts() {
-		replaceableFragment = new ContactList_Fragment();
+		 transactionManager = getSupportFragmentManager();
 		transaction = transactionManager.beginTransaction();
-		transaction.replace(R.id.fragment_frame, replaceableFragment);
+		transaction.replace(R.id.fragment_frame, contactListFragment);
 		transaction.addToBackStack(null);
 		transaction.commit();
 	}
 
 	private void openHome() {
-		replaceableFragment = new GridLayout_Fragment();
+		 transactionManager = getSupportFragmentManager();
 		transaction = transactionManager.beginTransaction();
-		transaction.replace(R.id.fragment_frame, replaceableFragment);
+		transaction.replace(R.id.fragment_frame, profileGridFragment);
 		transaction.addToBackStack(null);
 		transaction.commit();
 	}
@@ -85,9 +90,9 @@ public class MainActivity extends ActionBarActivity {
 	}
 
 	private void openEvents() {
-		replaceableFragment = new EventList_Fragment();
+		 transactionManager = getSupportFragmentManager();
 		transaction = transactionManager.beginTransaction();
-		transaction.replace(R.id.fragment_frame, replaceableFragment);
+		transaction.replace(R.id.fragment_frame, eventListFragment);
 		transaction.addToBackStack(null);
 		transaction.commit();
 	}

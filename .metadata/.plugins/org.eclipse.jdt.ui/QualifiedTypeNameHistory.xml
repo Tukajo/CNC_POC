@@ -31,7 +31,6 @@
 <fullyQualifiedTypeName name="android.widget.NumberPicker.OnValueChangeListener"/>
 <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
 <fullyQualifiedTypeName name="java.util.Calendar"/>
-<fullyQualifiedTypeName name="com.nanospark.cnc.R"/>
 <fullyQualifiedTypeName name="android.view.View.OnClickListener"/>
 <fullyQualifiedTypeName name="org.joda.time.LocalTime"/>
 <fullyQualifiedTypeName name="java.util.Locale"/>
@@ -40,9 +39,14 @@
 <fullyQualifiedTypeName name="android.app.TimePickerDialog.OnTimeSetListener"/>
 <fullyQualifiedTypeName name="android.widget.Toast"/>
 <fullyQualifiedTypeName name="android.graphics.Color"/>
-<fullyQualifiedTypeName name="android.R"/>
 <fullyQualifiedTypeName name="android.R.layout"/>
-<fullyQualifiedTypeName name="com.nanospark.cnc.R.id"/>
 <fullyQualifiedTypeName name="android.widget.AdapterView.OnItemSelectedListener"/>
 <fullyQualifiedTypeName name="org.joda.time.LocalDate"/>
+<fullyQualifiedTypeName name="android.app.Application"/>
+<fullyQualifiedTypeName name="com.nanospark.cnc.R"/>
+<fullyQualifiedTypeName name="com.nanospark.cnc.R.id"/>
+<fullyQualifiedTypeName name="android.support.v4.app.FragmentActivity"/>
+<fullyQualifiedTypeName name="android.R"/>
+<fullyQualifiedTypeName name="android.R.style"/>
+<fullyQualifiedTypeName name="com.nanospark.cnc.R.style"/>
 </qualifiedTypeNameHistroy>

@@ -27,6 +27,7 @@ public class EventList_Fragment extends Fragment {
 		
 
 		eventListView = (ListView) rootView.findViewById(android.R.id.list);
+		addNewEventBtn = (Button) rootView.findViewById(R.id.addListItem);
 		
 	     ArrayAdapter<Event> eventListAdapter = new ArrayAdapter<Event>(inflater.getContext(),
 	    		  android.R.layout.simple_list_item_1, globaldata.getEventInfoList());
@@ -81,8 +82,8 @@ public class EventList_Fragment extends Fragment {
 			});
 		
 		
-		addNewEventBtn = (Button) rootView.findViewById(R.id.addListItem);
 		
+		addNewEventBtn.setText("Add New Event");
 		addNewEventBtn.setOnClickListener(new View.OnClickListener() {
 			
 			@Override

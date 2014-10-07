@@ -7,14 +7,13 @@
         android:id="@+id/tableRow1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="left">
-
+        android:layout_gravity="left" >
 
         <EditText
             android:id="@+id/profilenameedittext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="top"
+            android:layout_gravity="center"
             android:layout_weight="3.0"
             android:ems="10"
             android:hint="@string/profilenamehint" >
@@ -44,10 +43,9 @@
         android:layout_height="wrap_content" >
 
         <Spinner
-            android:id="@+id/ProfileCreationContactSpinner"
+            android:id="@+id/profilecreationeventspinner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
-
     </TableRow>
 
     <TableRow
@@ -71,7 +69,6 @@
             android:layout_gravity="bottom"
             android:layout_weight="1"
             android:text="@string/createbuttontext" />
-
     </TableRow>
 
 </TableLayout>

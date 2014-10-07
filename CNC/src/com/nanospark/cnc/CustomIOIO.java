@@ -1,12 +1,12 @@
 package com.nanospark.cnc;
 
+import android.app.Application;
 import ioio.lib.api.exception.ConnectionLostException;
 import ioio.lib.util.BaseIOIOLooper;
 import ioio.lib.util.IOIOLooper;
 import ioio.lib.util.IOIOLooperProvider;
 import ioio.lib.util.android.IOIOAndroidApplicationHelper;
-import android.app.Application;
-import android.widget.Toast;
+
 
 public class CustomIOIO extends Application implements IOIOLooperProvider
 

@@ -85,7 +85,7 @@ public class ContactList_Fragment extends Fragment {
 			});
 		
 	
-		
+		addContactBtn.setText("Add New Contact");
 		addContactBtn.setOnClickListener(new View.OnClickListener() {
 			
 			@Override

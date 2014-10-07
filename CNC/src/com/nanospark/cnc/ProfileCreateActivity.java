@@ -1,5 +1,7 @@
 package com.nanospark.cnc;
 
+import java.util.ArrayList;
+
 import com.chiralcode.colorpicker.ColorPickerDialog;
 import com.chiralcode.colorpicker.ColorPickerDialog.OnColorSelectedListener;
 
@@ -23,10 +25,10 @@ public class ProfileCreateActivity extends Activity implements OnItemSelectedLis
 	Button createButton;
 	Button cancelButton;
 	Button pickColorButton;
-	Spinner contactProfileSpinner;
+	Spinner eventSpinner;
 	Boolean colorSelected = false;
 	RGBClass myRGBVals = null;
-	ContactInfo selectedContact = null;
+	ArrayList<Event> selectedEventsList = new ArrayList<Event>();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -38,17 +40,17 @@ public class ProfileCreateActivity extends Activity implements OnItemSelectedLis
 		pickColorButton = (Button) findViewById(R.id.pickcolor);
 		createButton = (Button) findViewById(R.id.createbutton);
 		cancelButton = (Button) findViewById(R.id.cancelbutton);
-		contactProfileSpinner = (Spinner) findViewById(R.id.ProfileCreationContactSpinner);
+		eventSpinner = (Spinner) findViewById(R.id.profilecreationeventspinner);
 
 		createButton.setOnClickListener(new View.OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
 				String profNameParam = enterProfileNameET.getText().toString();
-				if (!profNameParam.equals(null) && !profNameParam.equals("") && colorSelected && !selectedContact.equals(null) ) {
+				if (!profNameParam.equals(null) && !profNameParam.equals("") && colorSelected) {
 					globaldata.getMachineProfileList().add(
 							new MachineProfile(enterProfileNameET.getText()
-									.toString(), myRGBVals, selectedContact));
+									.toString(), myRGBVals, selectedEventsList));
 					Intent myReturnIntent = new Intent(
 							ProfileCreateActivity.this, MainActivity.class);
 					startActivity(myReturnIntent);
@@ -80,12 +82,12 @@ public class ProfileCreateActivity extends Activity implements OnItemSelectedLis
 
 		
 		
-		   ArrayAdapter<ContactInfo> contactAdapter = new ArrayAdapter<ContactInfo>(this,
-		    		  android.R.layout.simple_list_item_1, globaldata.getContactInfoList());
+		   ArrayAdapter<Event> eventSpinnerAdapter = new ArrayAdapter<Event>(this,
+		    		  android.R.layout.simple_list_item_1, globaldata.getEventInfoList());
 		
-		contactProfileSpinner.setAdapter(contactAdapter);
+		eventSpinner.setAdapter(eventSpinnerAdapter);
 		
-		contactProfileSpinner.setOnItemSelectedListener(this);
+		eventSpinner.setOnItemSelectedListener(this);
 		
 	}
 
@@ -124,7 +126,14 @@ public class ProfileCreateActivity extends Activity implements OnItemSelectedLis
 	@Override
 	public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2,
 			long arg3) {
-		selectedContact = (ContactInfo) arg0.getItemAtPosition(arg2);
+		
+		//TODO add event spinner here instead of contact spinner.
+		Event selectedEventToAdd = (Event) arg0.getItemAtPosition(arg2);
+		if(!selectedEventsList.contains(selectedEventsList)){
+			selectedEventsList.add(selectedEventToAdd);
+		}else{
+			selectedEventsList.remove(selectedEventToAdd);
+		}
 		
 	}
 

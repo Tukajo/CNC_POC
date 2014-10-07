@@ -14,6 +14,7 @@
             android:id="@+id/eventnametv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_weight="1"
             android:text="Event Name:"
             android:textAppearance="?android:attr/textAppearanceMedium" />
@@ -23,6 +24,7 @@
         android:id="@+id/eventnameet"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:ems="10"
         android:hint="enter name"
         android:inputType="text" />
@@ -36,15 +38,18 @@
             android:id="@+id/eventdescriptiontv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_weight="1"
             android:text="Description:"
             android:textAppearance="?android:attr/textAppearanceMedium" />
+
     </TableRow>
 
     <EditText
         android:id="@+id/eventdescriptionet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:ems="10"
         android:hint="enter a description"
         android:inputType="textMultiLine" />
@@ -58,6 +63,7 @@
             android:id="@+id/timetxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:text="Event Type:"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -79,6 +85,7 @@
                 android:id="@+id/radio0"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_weight="1"
                 android:checked="true"
                 android:text="Report" />
@@ -87,7 +94,7 @@
                 android:id="@+id/radio1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="fill"
+                android:layout_gravity="center"
                 android:layout_weight="1"
                 android:text="Notification" />
         </RadioGroup>
@@ -103,6 +110,7 @@
             android:id="@+id/event_fragment_frame"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_gravity="center"
             android:layout_weight="1" >
 
         </FrameLayout>

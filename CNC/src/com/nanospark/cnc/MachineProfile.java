@@ -1,13 +1,16 @@
 package com.nanospark.cnc;
+
+import java.util.ArrayList;
+
 public class MachineProfile {
 	String profileName;
 	RGBClass RGBVals;
-	ContactInfo attachedContact;
+	ArrayList<Event> attachedEvents = new ArrayList<Event>();
 
-	public MachineProfile(String profileName, RGBClass RGBVals, ContactInfo attachedContact) {
+	public MachineProfile(String profileName, RGBClass RGBVals, ArrayList<Event> attachedEvents) {
 		this.profileName = profileName;
 		this.RGBVals = RGBVals;
-		this.attachedContact = attachedContact;
+		this.attachedEvents = attachedEvents;
 	}
 
 	public String getProfileName() {
@@ -26,12 +29,12 @@ public class MachineProfile {
 		RGBVals = rGBVals;
 	}
 
-	public ContactInfo getAttachedContact() {
-		return attachedContact;
+	public ArrayList<Event> getAttachedEventsList() {
+		return attachedEvents;
 	}
 
-	public void setAttachedContact(ContactInfo attachedContact) {
-		this.attachedContact = attachedContact;
+	public void setAttachedEventsList(ArrayList<Event> attachedEvents) {
+		this.attachedEvents = attachedEvents;
 	}
 	
 }
