@@ -12,7 +12,8 @@
         <TableRow
             android:id="@+id/tableRow1"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
+            android:layout_height="0dp"
+            android:layout_weight="1" >
 
             <TextView
                 android:id="@+id/reportparametersheader"
@@ -25,7 +26,8 @@
         <TableRow
             android:id="@+id/tableRow2"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
+            android:layout_height="0dp"
+            android:layout_weight="1" >
 
             <Button
                 android:id="@+id/reportinputbutton"
@@ -39,7 +41,8 @@
         <TableRow
             android:id="@+id/tableRow3"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
+            android:layout_height="0dp"
+            android:layout_weight="1" >
 
             <Button
                 android:id="@+id/whattotrackbutton"
@@ -52,7 +55,8 @@
         <TableRow
             android:id="@+id/tableRow4"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
+            android:layout_height="0dp"
+            android:layout_weight="1" >
 
             <TextView
                 android:id="@+id/timeframereportheader"
@@ -65,7 +69,8 @@
         <TableRow
             android:id="@+id/tableRow5"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
+            android:layout_height="0dp"
+            android:layout_weight="1" >
 
             <Button
                 android:id="@+id/reportstartdatebutton"
@@ -78,7 +83,8 @@
         <TableRow
             android:id="@+id/tableRow6"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
+            android:layout_height="0dp"
+            android:layout_weight="1" >
 
             <Button
                 android:id="@+id/enddatereportbutton"
@@ -91,7 +97,8 @@
         <TableRow
             android:id="@+id/tableRow7"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
+            android:layout_height="0dp"
+            android:layout_weight="1" >
 
             <ToggleButton
                 android:id="@+id/alldayreporttoggle"
@@ -106,7 +113,8 @@
         <TableRow
             android:id="@+id/tableRow8"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
+            android:layout_height="0dp"
+            android:layout_weight="1" >
 
             <Button
                 android:id="@+id/starttimereportbutton"
@@ -119,7 +127,8 @@
         <TableRow
             android:id="@+id/tableRow9"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
+            android:layout_height="0dp"
+            android:layout_weight="1" >
 
             <Button
                 android:id="@+id/endtimereportbutton"
@@ -132,7 +141,8 @@
         <TableRow
             android:id="@+id/tableRow10"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
+            android:layout_height="0dp"
+            android:layout_weight="1" >
 
             <Button
                 android:id="@+id/dayselectionreportbutton"
@@ -145,7 +155,8 @@
         <TableRow
             android:id="@+id/tableRow11"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
+            android:layout_height="0dp"
+            android:layout_weight="1" >
 
             <TextView
                 android:id="@+id/sendreportreportheader"
@@ -158,7 +169,8 @@
         <TableRow
             android:id="@+id/tableRow12"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
+            android:layout_height="0dp"
+            android:layout_weight="1" >
 
             <Button
                 android:id="@+id/selectcontactsreportbutton"
@@ -171,7 +183,8 @@
         <TableRow
             android:id="@+id/tableRow13"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
+            android:layout_height="0dp"
+            android:layout_weight="1" >
 
             <Button
                 android:id="@+id/selectformatreportbutton"
@@ -179,13 +192,13 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Select Format:" />
-
         </TableRow>
 
         <TableRow
             android:id="@+id/tableRow14"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
+            android:layout_height="0dp"
+            android:layout_weight="1" >
 
             <Button
                 android:id="@+id/whentosendreportbutton"
@@ -193,13 +206,13 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="When To Send:" />
-
         </TableRow>
 
         <TableRow
             android:id="@+id/tableRow15"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
+            android:layout_height="0dp"
+            android:layout_weight="1" >
 
             <ToggleButton
                 android:id="@+id/repeatreporttoggle"
@@ -209,8 +222,29 @@
                 android:text="Repeat:"
                 android:textOff="Repeat: No"
                 android:textOn="Repeat: Yes" />
-
         </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow16"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1" >
+
+            <Button
+                android:id="@+id/eventreportbuttoncancel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Cancel" />
+
+            <Button
+                android:id="@+id/eventreportbuttoncreate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Create" />
+        </TableRow>
+
     </TableLayout>
 
 </ScrollView>

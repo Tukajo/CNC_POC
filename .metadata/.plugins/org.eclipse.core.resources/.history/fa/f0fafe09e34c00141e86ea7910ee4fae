@@ -1,0 +1,5 @@
+package com.nanospark.cnc;
+
+public class NotificationEvent extends Event {
+
+}

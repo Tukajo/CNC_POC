@@ -1,0 +1,21 @@
+package com.nanospark.cnc;
+
+import java.util.ArrayList;
+import java.util.Calendar;
+
+import android.text.format.Time;
+
+public class ReportEvent extends Event {
+
+	public ReportEvent(Pin assignedPin, String trackingType,
+			Calendar startDate, Calendar endDate, boolean watchAllDay,
+			Time startTime, Time endTime, ArrayList<String> selectedDays,
+			ContactInfo selectedContact, String formatChoice,
+			ReportTimeSpec reportTimingConfig) {
+		super(type, assignedPin, trackingType, startDate, endDate, watchAllDay,
+				startTime, endTime, selectedDays, selectedContact, formatChoice,
+				reportTimingConfig);
+		// TODO Auto-generated constructor stub
+	}
+
+}

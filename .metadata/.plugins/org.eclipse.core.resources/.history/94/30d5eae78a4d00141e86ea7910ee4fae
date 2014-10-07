@@ -1,0 +1,153 @@
+package com.nanospark.cnc;
+
+import java.util.ArrayList;
+import java.util.Calendar;
+
+import org.joda.time.LocalDate;
+import org.joda.time.LocalTime;
+
+
+public class Event {
+	String eventTitle;
+	String eventDescription
+	int assignedPin;
+	String trackingType;
+	LocalDate startDate;
+	LocalDate endDate;
+	boolean watchAllDay;
+	LocalTime startTime;
+	LocalTime endTime;
+	ArrayList<String> selectedDays = new ArrayList<String>();
+	ArrayList<ContactInfo> selectedContact = new ArrayList<ContactInfo>();
+	String formatChoice;
+	ReportTimeSpec reportTimingConfigs;
+
+	public Event(String eventTitle, int assignedPin, String trackingType,
+			LocalDate startDate, LocalDate endDate, boolean watchAllDay,
+			LocalTime startTime, LocalTime endTime, ArrayList<String> selectedDays,
+			ArrayList<ContactInfo> selectedContact, String formatChoice, ReportTimeSpec reportTimingConfigs) {
+		this.eventTitle = eventTitle;
+		this.assignedPin = assignedPin;
+		this.trackingType = trackingType;
+		this.startDate = startDate;
+		this.endDate = endDate;
+		this.watchAllDay = watchAllDay;
+		this.startTime = startTime;
+		this.endTime = endTime;
+		this.selectedDays = selectedDays;
+		this.selectedContact = selectedContact;
+		this.formatChoice = formatChoice;
+		this.reportTimingConfigs = reportTimingConfigs;
+	}
+
+	
+	
+	public String getEventTitle() {
+		return eventTitle;
+	}
+
+
+
+	public void setEventTitle(String eventTitle) {
+		this.eventTitle = eventTitle;
+	}
+
+
+
+	public ReportTimeSpec getReportTimingConfigs() {
+		return reportTimingConfigs;
+	}
+
+	public void setReportTimingConfigs(ReportTimeSpec reportTimingConfigs) {
+		this.reportTimingConfigs = reportTimingConfigs;
+	}
+
+	public int getAssignedPin() {
+		return assignedPin;
+	}
+
+	public void setAssignedPin(int assignedPin) {
+		this.assignedPin = assignedPin;
+	}
+
+	public String getTrackingType() {
+		return trackingType;
+	}
+
+	public void setTrackingType(String trackingType) {
+		this.trackingType = trackingType;
+	}
+
+	public LocalDate getStartDate() {
+		return startDate;
+	}
+
+	public void setStartDate(LocalDate startDate) {
+		this.startDate = startDate;
+	}
+
+	public LocalDate getEndDate() {
+		return endDate;
+	}
+
+	public void setEndDate(LocalDate endDate) {
+		this.endDate = endDate;
+	}
+
+	public boolean isWatchAllDay() {
+		return watchAllDay;
+	}
+
+	public void setWatchAllDay(boolean watchAllDay) {
+		this.watchAllDay = watchAllDay;
+	}
+
+	public LocalTime getStartTime() {
+		return startTime;
+	}
+
+	public void setStartTime(LocalTime startTime) {
+		this.startTime = startTime;
+	}
+
+	public LocalTime getEndTime() {
+		return endTime;
+	}
+
+	public void setEndTime(LocalTime endTime) {
+		this.endTime = endTime;
+	}
+
+	public ArrayList<String> getSelectedDays() {
+		return selectedDays;
+	}
+
+	public void setSelectedDays(ArrayList<String> selectedDays) {
+		this.selectedDays = selectedDays;
+	}
+
+	public ArrayList<ContactInfo> getSelectedContact() {
+		return selectedContact;
+	}
+
+	public void setSelectedContact(ArrayList<ContactInfo> selectedContact) {
+		this.selectedContact = selectedContact;
+	}
+
+	public String getFormatChoice() {
+		return formatChoice;
+	}
+
+	public void setFormatChoice(String formatChoice) {
+		this.formatChoice = formatChoice;
+	}
+
+	public ReportTimeSpec getReportTimeSpec() {
+		return reportTimingConfigs;
+	}
+
+	public void setReportTimeSpec(ReportTimeSpec reportTimingConfigs) {
+		this.reportTimingConfigs = reportTimingConfigs;
+	}
+	
+}

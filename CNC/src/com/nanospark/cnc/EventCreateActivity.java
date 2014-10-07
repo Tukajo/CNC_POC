@@ -37,15 +37,15 @@ public class EventCreateActivity extends FragmentActivity {
 		reportRB = (RadioButton) findViewById(R.id.radio0);
 		notificationRB = (RadioButton) findViewById(R.id.radio1);
 		
-		createEventBtn = (Button) findViewById(R.id.eventCreateCreateBtn);
-		cancelEventBtn = (Button) findViewById(R.id.eventCreateCancelBtn);
+/*		createEventBtn = (Button) findViewById(R.id.eventCreateCreateBtn);
+		cancelEventBtn = (Button) findViewById(R.id.eventCreateCancelBtn);*/
 		
 		eventFragment = new event_report_fragment();
 		transaction = transactionManager.beginTransaction();
 		transaction.replace(R.id.event_fragment_frame, eventFragment);
 		transaction.addToBackStack(null);
 		transaction.commit();
-		
+	/*	
 		createEventBtn.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
@@ -61,7 +61,7 @@ public class EventCreateActivity extends FragmentActivity {
 				startActivity(myCancelEventCreationIntent);
 			}
 		});
-		
+		*/
 		
 		notificationRB.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 			
@@ -95,7 +95,10 @@ public class EventCreateActivity extends FragmentActivity {
 
 	}
 	
-	public void constructEventObject(){
-		
+	public String getEventTitle(){
+		return enterEventNameET.getText().toString();
+	}
+	public String getEventDescription(){
+		return enterEventDescriptionET.getText().toString();
 	}
 }

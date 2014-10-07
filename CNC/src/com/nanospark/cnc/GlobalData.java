@@ -10,6 +10,7 @@ public class GlobalData {
 	// ArrayLists of Data.
 	public ArrayList<MachineProfile> machineProfileList = new ArrayList<MachineProfile>();
 	public ArrayList<ContactInfo> contactInfoList = new ArrayList<ContactInfo>();
+	public ArrayList<Event> eventInfoList = new ArrayList<Event>();
 
 	protected GlobalData() {
 		// Exists only to defeat instantiation.
@@ -37,6 +38,14 @@ public class GlobalData {
 
 	public void setContactInfoList(ArrayList<ContactInfo> contactInfoList) {
 		this.contactInfoList = contactInfoList;
+	}
+
+	public ArrayList<Event> getEventInfoList() {
+		return eventInfoList;
+	}
+
+	public void setEventInfoList(ArrayList<Event> eventInfoList) {
+		this.eventInfoList = eventInfoList;
 	}
 
 }

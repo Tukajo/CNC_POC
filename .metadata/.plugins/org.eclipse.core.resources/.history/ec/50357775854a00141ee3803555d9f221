@@ -1,0 +1,58 @@
+package com.nanospark.cnc;
+
+import java.util.Calendar;
+
+import android.text.format.Time;
+
+public class ReportTimeSpec {
+	String frequency;
+	Time sendTime;
+	Calendar sendDate;
+	int sendDay;
+	//hourly
+	public ReportTimeSpec(String frequency) {
+		this.frequency = frequency;
+	}
+	
+	//daily
+	public ReportTimeSpec(String frequency, Time sendTime) {
+		this.frequency = frequency;
+		this.sendDate = sendDate;
+		this.sendTime = sendTime;
+		this.sendDay = sendDay;
+	}
+	//weekly
+	public ReportTimeSpec(String frequency, Time sendTime, Calendar sendDate, int sendDay) {
+		this.frequency = frequency;
+		this.sendDate = sendDate;
+		this.sendTime = sendTime;
+		this.sendDay = sendDay;
+	}
+	//monthly
+	public ReportTimeSpec(String frequency, Time sendTime, Calendar sendDate, int sendDay) {
+		this.frequency = frequency;
+		this.sendDate = sendDate;
+		this.sendTime = sendTime;
+		this.sendDay = sendDay;
+	}
+	public String getFrequency() {
+		return frequency;
+	}
+	public void setFrequency(String frequency) {
+		this.frequency = frequency;
+	}
+	public Time getSendTime() {
+		return sendTime;
+	}
+	public void setSendTime(Time sendTime) {
+		this.sendTime = sendTime;
+	}
+	public Calendar getSendDate() {
+		return sendDate;
+	}
+	public void setSendDate(Calendar sendDate) {
+		this.sendDate = sendDate;
+	}
+	
+
+}

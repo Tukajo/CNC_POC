@@ -3,27 +3,31 @@ package com.nanospark.cnc;
 import java.util.ArrayList;
 import java.util.Calendar;
 
-import android.text.format.Time;
+import org.joda.time.LocalDate;
+import org.joda.time.LocalTime;
+
 
 public class Event {
-	String type;
-	Pin assignedPin;
+	String eventTitle;
+	String eventDescription;
+	int assignedPin;
 	String trackingType;
-	Calendar startDate;
-	Calendar endDate;
+	LocalDate startDate;
+	LocalDate endDate;
 	boolean watchAllDay;
-	Time startTime;
-	Time endTime;
+	LocalTime startTime;
+	LocalTime endTime;
 	ArrayList<String> selectedDays = new ArrayList<String>();
-	ContactInfo selectedContact;
+	ArrayList<ContactInfo> selectedContact = new ArrayList<ContactInfo>();
 	String formatChoice;
-	TimingConfig reportTimingConfigs;
+	ReportTimeSpec reportTimingConfigs;
 
-	public Event(String type, Pin assignedPin, String trackingType,
-			Calendar startDate, Calendar endDate, boolean watchAllDay,
-			Time startTime, Time endTime, ArrayList<String> selectedDays,
-			ContactInfo selectedContact, String formatChoice, TimingConfig reportTimingConfig) {
-		this.type = type;
+	public Event(String eventTitle, String eventDescription, int assignedPin, String trackingType,
+			LocalDate startDate, LocalDate endDate, boolean watchAllDay,
+			LocalTime startTime, LocalTime endTime, ArrayList<String> selectedDays,
+			ArrayList<ContactInfo> selectedContact, String formatChoice, ReportTimeSpec reportTimingConfigs) {
+		this.eventTitle = eventTitle;
+		this.eventDescription = eventDescription;
 		this.assignedPin = assignedPin;
 		this.trackingType = trackingType;
 		this.startDate = startDate;
@@ -37,19 +41,37 @@ public class Event {
 		this.reportTimingConfigs = reportTimingConfigs;
 	}
 
-	public String getType() {
-		return type;
+	
+	
+	public String getEventTitle() {
+		return eventTitle;
 	}
 
-	public void setType(String type) {
-		this.type = type;
+	public void setEventTitle(String eventTitle) {
+		this.eventTitle = eventTitle;
 	}
 
-	public Pin getAssignedPin() {
+	public String getEventDescription() {
+		return eventDescription;
+	}
+
+	public void setEventDescription(String eventDescription) {
+		this.eventDescription = eventDescription;
+	}
+
+	public ReportTimeSpec getReportTimingConfigs() {
+		return reportTimingConfigs;
+	}
+
+	public void setReportTimingConfigs(ReportTimeSpec reportTimingConfigs) {
+		this.reportTimingConfigs = reportTimingConfigs;
+	}
+
+	public int getAssignedPin() {
 		return assignedPin;
 	}
 
-	public void setAssignedPin(Pin assignedPin) {
+	public void setAssignedPin(int assignedPin) {
 		this.assignedPin = assignedPin;
 	}
 
@@ -61,19 +83,19 @@ public class Event {
 		this.trackingType = trackingType;
 	}
 
-	public Calendar getStartDate() {
+	public LocalDate getStartDate() {
 		return startDate;
 	}
 
-	public void setStartDate(Calendar startDate) {
+	public void setStartDate(LocalDate startDate) {
 		this.startDate = startDate;
 	}
 
-	public Calendar getEndDate() {
+	public LocalDate getEndDate() {
 		return endDate;
 	}
 
-	public void setEndDate(Calendar endDate) {
+	public void setEndDate(LocalDate endDate) {
 		this.endDate = endDate;
 	}
 
@@ -85,19 +107,19 @@ public class Event {
 		this.watchAllDay = watchAllDay;
 	}
 
-	public Time getStartTime() {
+	public LocalTime getStartTime() {
 		return startTime;
 	}
 
-	public void setStartTime(Time startTime) {
+	public void setStartTime(LocalTime startTime) {
 		this.startTime = startTime;
 	}
 
-	public Time getEndTime() {
+	public LocalTime getEndTime() {
 		return endTime;
 	}
 
-	public void setEndTime(Time endTime) {
+	public void setEndTime(LocalTime endTime) {
 		this.endTime = endTime;
 	}
 
@@ -109,11 +131,11 @@ public class Event {
 		this.selectedDays = selectedDays;
 	}
 
-	public ContactInfo getSelectedContact() {
+	public ArrayList<ContactInfo> getSelectedContact() {
 		return selectedContact;
 	}
 
-	public void setSelectedContact(ContactInfo selectedContact) {
+	public void setSelectedContact(ArrayList<ContactInfo> selectedContact) {
 		this.selectedContact = selectedContact;
 	}
 
@@ -125,14 +147,12 @@ public class Event {
 		this.formatChoice = formatChoice;
 	}
 
-	public TimingConfig getReportTimingConfigs() {
+	public ReportTimeSpec getReportTimeSpec() {
 		return reportTimingConfigs;
 	}
 
-	public void setReportTimingConfigs(TimingConfig reportTimingConfigs) {
+	public void setReportTimeSpec(ReportTimeSpec reportTimingConfigs) {
 		this.reportTimingConfigs = reportTimingConfigs;
 	}
 	
-	
-
 }

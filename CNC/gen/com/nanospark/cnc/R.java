@@ -18,9 +18,12 @@ public final class R {
     }
     public static final class array {
         public static final int carrier_options=0x7f0d0000;
+        public static final int dates_to_send_report_array=0x7f0d0006;
+        public static final int days_of_the_week=0x7f0d0005;
         public static final int pin_choices=0x7f0d0001;
         public static final int what_format_choice_array=0x7f0d0003;
         public static final int what_to_track_array=0x7f0d0002;
+        public static final int when_to_send_report_array=0x7f0d0004;
     }
     public static final class attr {
         /**  Custom divider drawable to use for elements in the action bar. 
@@ -1292,7 +1295,7 @@ containing a value of this type.
         public static final int wallpaper2=0x7f020059;
     }
     public static final class id {
-        public static final int ProfileCreationContactSpinner=0x7f090094;
+        public static final int ProfileCreationContactSpinner=0x7f090097;
         public static final int action_bar=0x7f09002d;
         public static final int action_bar_activity_content=0x7f090026;
         public static final int action_bar_container=0x7f09002c;
@@ -1300,18 +1303,18 @@ containing a value of this type.
         public static final int action_bar_root=0x7f09002b;
         public static final int action_bar_subtitle=0x7f090034;
         public static final int action_bar_title=0x7f090033;
-        public static final int action_contacts=0x7f0900a0;
+        public static final int action_contacts=0x7f0900ac;
         public static final int action_context_bar=0x7f09002e;
-        public static final int action_events=0x7f09009f;
-        public static final int action_help=0x7f0900a2;
-        public static final int action_home=0x7f09009e;
+        public static final int action_events=0x7f0900ab;
+        public static final int action_help=0x7f0900ae;
+        public static final int action_home=0x7f0900aa;
         public static final int action_menu_divider=0x7f090027;
         public static final int action_menu_presenter=0x7f090028;
         public static final int action_mode_close_button=0x7f090035;
-        public static final int action_settings=0x7f0900a1;
+        public static final int action_settings=0x7f0900ad;
         public static final int activity_chooser_view_content=0x7f090036;
-        public static final int addListItem=0x7f09008c;
-        public static final int addProfileButton=0x7f090090;
+        public static final int addListItem=0x7f09008f;
+        public static final int addProfileButton=0x7f090093;
         public static final int alignBounds=0x7f090002;
         public static final int alignMargins=0x7f090003;
         public static final int alldayreporttoggle=0x7f09007b;
@@ -1319,8 +1322,8 @@ containing a value of this type.
         public static final int beginning=0x7f090023;
         public static final int bottom=0x7f090005;
         public static final int button=0x7f09004e;
-        public static final int cancelButton=0x7f09009c;
-        public static final int cancelbutton=0x7f090095;
+        public static final int cancelButton=0x7f0900a8;
+        public static final int cancelbutton=0x7f090098;
         public static final int center=0x7f09000c;
         public static final int center_horizontal=0x7f09000a;
         public static final int center_vertical=0x7f090008;
@@ -1333,14 +1336,16 @@ containing a value of this type.
         public static final int contactEmailET=0x7f090059;
         public static final int contactInspectCarrierTV=0x7f090062;
         public static final int contactInspectEmailTV=0x7f090061;
-        public static final int contactInspectNameTV=0x7f090097;
+        public static final int contactInspectNameTV=0x7f09009a;
         public static final int contactInspectPhoneTV=0x7f090060;
         public static final int contactNameET=0x7f090053;
         public static final int contactPhoneET=0x7f090056;
         public static final int contactlayoutcarrier=0x7f09005b;
         public static final int contactlayoutemailtv=0x7f090058;
-        public static final int createbutton=0x7f090096;
+        public static final int createbutton=0x7f090099;
+        public static final int datespinner=0x7f09009f;
         public static final int dayselectionreportbutton=0x7f090081;
+        public static final int dayspinner=0x7f0900a1;
         public static final int default_activity_button=0x7f090039;
         public static final int dialog=0x7f090020;
         public static final int dialogButtonEdit=0x7f090063;
@@ -1357,37 +1362,40 @@ containing a value of this type.
         public static final int event_fragment_frame=0x7f090072;
         public static final int eventdescriptiontv=0x7f090055;
         public static final int eventnametv=0x7f090052;
+        public static final int eventreportbuttoncancel=0x7f09008d;
+        public static final int eventreportbuttoncreate=0x7f09008e;
         public static final int expand_activities_button=0x7f090037;
         public static final int expanded_menu=0x7f09003d;
         public static final int fill=0x7f09000d;
         public static final int fill_horizontal=0x7f09000b;
         public static final int fill_vertical=0x7f090009;
         public static final int fragment_frame=0x7f090050;
+        public static final int freqspinner=0x7f09009d;
         public static final int fridayCB=0x7f090069;
-        public static final int genericselectionspinner=0x7f09008e;
-        public static final int gridView1=0x7f09008f;
-        public static final int grid_text=0x7f090091;
+        public static final int genericselectionspinner=0x7f090091;
+        public static final int gridView1=0x7f090092;
+        public static final int grid_text=0x7f090094;
         public static final int home=0x7f090025;
         public static final int homeAsUp=0x7f090017;
         public static final int horizontal=0x7f090000;
-        public static final int hourPicker=0x7f090099;
+        public static final int hourPicker=0x7f0900a5;
         public static final int icon=0x7f09003b;
         public static final int ifRoom=0x7f09001c;
         public static final int image=0x7f090038;
         public static final int left=0x7f090006;
-        public static final int listItemTitleTV=0x7f09008d;
+        public static final int listItemTitleTV=0x7f090090;
         public static final int listMode=0x7f090013;
         public static final int list_item=0x7f09003a;
         public static final int middle=0x7f090024;
-        public static final int minutePicker=0x7f09009a;
+        public static final int minutePicker=0x7f0900a6;
         public static final int mondayCB=0x7f090065;
         public static final int multiColorPicker=0x7f09004d;
         public static final int never=0x7f09001b;
         public static final int none=0x7f090022;
         public static final int normal=0x7f090012;
-        public static final int pickcolor=0x7f090093;
-        public static final int profileAttachedContactNameTV=0x7f090098;
-        public static final int profilenameedittext=0x7f090092;
+        public static final int pickcolor=0x7f090096;
+        public static final int profileAttachedContactNameTV=0x7f09009b;
+        public static final int profilenameedittext=0x7f090095;
         public static final int progress_circular=0x7f090029;
         public static final int progress_horizontal=0x7f09002a;
         public static final int radio=0x7f090040;
@@ -1395,9 +1403,9 @@ containing a value of this type.
         public static final int radio1=0x7f090071;
         public static final int radioGroup1=0x7f09006f;
         public static final int repeatreporttoggle=0x7f09008b;
-        public static final int reportinputbutton=0x7f090075;
-        public static final int reportparametersheader=0x7f090074;
-        public static final int reportstartdatebutton=0x7f090078;
+        public static final int reportinputbutton=0x7f090074;
+        public static final int reportparametersheader=0x7f090073;
+        public static final int reportstartdatebutton=0x7f090077;
         public static final int right=0x7f090007;
         public static final int saturdayCB=0x7f09006a;
         public static final int search_badge=0x7f090043;
@@ -1410,11 +1418,11 @@ containing a value of this type.
         public static final int search_plate=0x7f090047;
         public static final int search_src_text=0x7f090048;
         public static final int search_voice_btn=0x7f09004c;
-        public static final int secondPicker=0x7f09009b;
+        public static final int secondPicker=0x7f0900a7;
         public static final int selectcontactsreportbutton=0x7f090085;
         public static final int selectformatreportbutton=0x7f090087;
         public static final int sendreportreportheader=0x7f090083;
-        public static final int setButton=0x7f09009d;
+        public static final int setButton=0x7f0900a9;
         public static final int shortcut=0x7f09003f;
         public static final int showCustom=0x7f090019;
         public static final int showHome=0x7f090016;
@@ -1423,6 +1431,7 @@ containing a value of this type.
         public static final int start=0x7f090010;
         public static final int starttimereportbutton=0x7f09007d;
         public static final int submitBtn=0x7f09006c;
+        public static final int submitWhenToSendBtn=0x7f0900a4;
         public static final int submit_area=0x7f09004a;
         public static final int sundayCB=0x7f09006b;
         public static final int tabMode=0x7f090014;
@@ -1433,16 +1442,22 @@ containing a value of this type.
         public static final int tableRow13=0x7f090086;
         public static final int tableRow14=0x7f090088;
         public static final int tableRow15=0x7f09008a;
+        public static final int tableRow16=0x7f09008c;
         public static final int tableRow2=0x7f090054;
         public static final int tableRow3=0x7f090057;
         public static final int tableRow4=0x7f09005a;
         public static final int tableRow5=0x7f09005d;
-        public static final int tableRow6=0x7f090073;
+        public static final int tableRow6=0x7f090078;
         public static final int tableRow7=0x7f09007a;
         public static final int tableRow8=0x7f09007c;
         public static final int tableRow9=0x7f09007e;
+        public static final int textView1=0x7f09009c;
+        public static final int textView2=0x7f09009e;
+        public static final int textView3=0x7f0900a0;
+        public static final int textView4=0x7f0900a2;
         public static final int thursdayCB=0x7f090068;
-        public static final int timeframereportheader=0x7f090077;
+        public static final int timePicker1=0x7f0900a3;
+        public static final int timeframereportheader=0x7f090076;
         public static final int timetxt=0x7f09006e;
         public static final int title=0x7f09003c;
         public static final int top=0x7f090004;
@@ -1452,7 +1467,7 @@ containing a value of this type.
         public static final int useLogo=0x7f090015;
         public static final int vertical=0x7f090001;
         public static final int wednesdayCB=0x7f090067;
-        public static final int whattotrackbutton=0x7f090076;
+        public static final int whattotrackbutton=0x7f090075;
         public static final int whentosendreportbutton=0x7f090089;
         public static final int withText=0x7f09001e;
     }
@@ -1523,8 +1538,9 @@ containing a value of this type.
         public static final int grid_single=0x7f030026;
         public static final int profile_creation_layout=0x7f030027;
         public static final int profile_inspection_dialog=0x7f030028;
-        public static final int support_simple_spinner_dropdown_item=0x7f030029;
-        public static final int time_picker_dialog=0x7f03002a;
+        public static final int report_send_timing_dialog=0x7f030029;
+        public static final int support_simple_spinner_dropdown_item=0x7f03002a;
+        public static final int time_picker_dialog=0x7f03002b;
     }
     public static final class menu {
         public static final int main=0x7f0e0000;
