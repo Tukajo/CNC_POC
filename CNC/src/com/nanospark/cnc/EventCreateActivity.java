@@ -36,7 +36,8 @@ public class EventCreateActivity extends FragmentActivity {
 		selectEventType = (RadioGroup) findViewById(R.id.radioGroup1);
 		reportRB = (RadioButton) findViewById(R.id.radio0);
 		notificationRB = (RadioButton) findViewById(R.id.radio1);
-		
+		enterEventNameET = (EditText) findViewById(R.id.eventnameet);
+		enterEventDescriptionET = (EditText) findViewById(R.id.eventdescriptionet);
 /*		createEventBtn = (Button) findViewById(R.id.eventCreateCreateBtn);
 		cancelEventBtn = (Button) findViewById(R.id.eventCreateCancelBtn);*/
 		

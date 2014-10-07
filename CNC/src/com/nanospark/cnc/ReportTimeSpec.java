@@ -2,6 +2,7 @@ package com.nanospark.cnc;
 
 import java.util.Calendar;
 
+import org.joda.time.LocalDate;
 import org.joda.time.LocalTime;
 
 import android.text.format.Time;
@@ -9,7 +10,7 @@ import android.text.format.Time;
 public class ReportTimeSpec {
 	String frequency;
 	LocalTime sendTime;
-	Calendar sendDate;
+	String sendDateInfo;
 	int sendDay;
 	//hourly
 	public ReportTimeSpec(String frequency) {
@@ -28,9 +29,9 @@ public class ReportTimeSpec {
 		this.sendDay = sendDay;
 	}
 	//monthly
-	public ReportTimeSpec(String frequency, LocalTime sendTime, Calendar sendDate) {
+	public ReportTimeSpec(String frequency, LocalTime sendTime, String sendDateInfo) {
 		this.frequency = frequency;
-		this.sendDate = sendDate;
+		this.sendDateInfo = sendDateInfo;
 		this.sendTime = sendTime;
 	}
 	public String getFrequency() {
@@ -45,11 +46,11 @@ public class ReportTimeSpec {
 	public void setSendTime(LocalTime sendTime) {
 		this.sendTime = sendTime;
 	}
-	public Calendar getSendDate() {
-		return sendDate;
+	public String getSendDateInfo() {
+		return sendDateInfo;
 	}
-	public void setSendDate(Calendar sendDate) {
-		this.sendDate = sendDate;
+	public void setSendDateInfo(String sendDateInfo) {
+		this.sendDateInfo = sendDateInfo;
 	}
 
 	public int getSendDay() {

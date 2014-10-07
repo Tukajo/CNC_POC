@@ -1338,7 +1338,6 @@ containing a value of this type.
         public static final int contactInspectEmailTV=0x7f090061;
         public static final int contactInspectNameTV=0x7f09009a;
         public static final int contactInspectPhoneTV=0x7f090060;
-        public static final int contactNameET=0x7f090053;
         public static final int contactPhoneET=0x7f090056;
         public static final int contactlayoutcarrier=0x7f09005b;
         public static final int contactlayoutemailtv=0x7f090058;
@@ -1352,7 +1351,6 @@ containing a value of this type.
         public static final int dialogButtonOK=0x7f090064;
         public static final int disableHome=0x7f09001a;
         public static final int dropdown=0x7f090021;
-        public static final int editText1=0x7f09006d;
         public static final int edit_query=0x7f090041;
         public static final int end=0x7f090011;
         public static final int enddatereportbutton=0x7f090079;
@@ -1360,7 +1358,9 @@ containing a value of this type.
         public static final int eventCreateCancelBtn=0x7f09005e;
         public static final int eventCreateCreateBtn=0x7f09005f;
         public static final int event_fragment_frame=0x7f090072;
+        public static final int eventdescriptionet=0x7f09006d;
         public static final int eventdescriptiontv=0x7f090055;
+        public static final int eventnameet=0x7f090053;
         public static final int eventnametv=0x7f090052;
         public static final int eventreportbuttoncancel=0x7f09008d;
         public static final int eventreportbuttoncreate=0x7f09008e;

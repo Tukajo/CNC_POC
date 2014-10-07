@@ -154,5 +154,9 @@ public class Event {
 	public void setReportTimeSpec(ReportTimeSpec reportTimingConfigs) {
 		this.reportTimingConfigs = reportTimingConfigs;
 	}
+	@Override
+	public String toString(){
+		return this.eventTitle;
+	}
 	
 }

@@ -8,11 +8,14 @@ import java.util.Locale;
 
 import org.joda.time.LocalDate;
 import org.joda.time.LocalTime;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.format.Time;
@@ -74,6 +77,8 @@ public class event_report_fragment extends Fragment {
 	LocalDate endDate = new LocalDate();
 	LocalTime startTime = LocalTime.now();
 	LocalTime endTime = new LocalTime();
+	String startTimeText = "";
+	String endTimeText = "";
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -182,8 +187,8 @@ public class event_report_fragment extends Fragment {
 									View view, int position, long id) {
 								// Change the text of the button to fit which
 								// selection the user has made.
-								reportInputBtn.setText("Input #: " + position
-										+ 1);
+								reportInputBtn.setText("Input #: "
+										+ (position + 1));
 								pinNumber = position + 1;
 							}
 
@@ -279,12 +284,15 @@ public class event_report_fragment extends Fragment {
 							@Override
 							public void onDateSet(DatePicker view, int year,
 									int monthOfYear, int dayOfMonth) {
-								startDateBtn.setText("Start Date: "
-										+ (monthOfYear + 1) + "-" + dayOfMonth
-										+ "-" + year);
 
 								startDate = new LocalDate(year,
 										monthOfYear + 1, dayOfMonth);
+								DateTimeFormatter fmt = DateTimeFormat
+										.forPattern("dd MMMM, yyyy");
+								String formatDate = startDate.toString(fmt);
+								startDateBtn.setText("Start Date: "
+										+ formatDate);
+
 							}
 						}, LocalDate.now().getYear(), LocalDate.now()
 								.getMonthOfYear() - 1, LocalDate.now()
@@ -321,9 +329,11 @@ public class event_report_fragment extends Fragment {
 
 								endDate = new LocalDate(year, monthOfYear + 1,
 										dayOfMonth);
-								endDateBtn.setText("End Date: "
-										+ (monthOfYear + 1) + "-" + dayOfMonth
-										+ "-" + year);
+								DateTimeFormatter fmt = DateTimeFormat
+										.forPattern("dd MMMM, yyyy");
+								String formatDate = endDate.toString(fmt);
+								endDateBtn.setText("End Date: " + formatDate);
+
 							}
 						}, startDate.getYear(), startDate.getMonthOfYear() - 1,
 						startDate.getDayOfMonth());
@@ -349,221 +359,56 @@ public class event_report_fragment extends Fragment {
 
 			@Override
 			public void onClick(View v) {
-
-				// custom dialog
-				final Dialog dialog = new Dialog(getActivity());
-				dialog.setContentView(R.layout.time_picker_dialog);
-				dialog.setTitle("Select starting time");
-
-				Button setBtn = (Button) dialog.findViewById(R.id.setButton);
-				Button cancelBtn = (Button) dialog
-						.findViewById(R.id.cancelButton);
-				final NumberPicker hrPkr = (NumberPicker) dialog
-						.findViewById(R.id.hourPicker);
-				final NumberPicker minPkr = (NumberPicker) dialog
-						.findViewById(R.id.minutePicker);
-				final NumberPicker secPkr = (NumberPicker) dialog
-						.findViewById(R.id.secondPicker);
-				hrPkr.setMaxValue(23);
-				hrPkr.setMinValue(0);
-				minPkr.setMaxValue(59);
-				minPkr.setMinValue(0);
-				secPkr.setMaxValue(59);
-				secPkr.setMinValue(0);
-
-				/*
-				 * final Calendar myTimeSelection = Calendar.getInstance();
-				 * myTimeSelection.set(Calendar.SECOND, currentSec);
-				 * myTimeSelection.set(Calendar.MINUTE, currentMin);
-				 * myTimeSelection.set(Calendar.HOUR, currentHour);
-				 */
+				LocalTime currentTime = LocalTime.now();
 				startTime = LocalTime.now();
+				final DateTimeFormatter fmt = DateTimeFormat
+						.forPattern("hh:mm aa");
+				// custom dialog
+				final TimePickerDialog dialog = new TimePickerDialog(
+						getActivity(),
+						new TimePickerDialog.OnTimeSetListener() {
 
-				final TextView timeText = (TextView) dialog
-						.findViewById(R.id.timetxt);
-				timeText.setText(startTime.getHourOfDay() + ":"
-						+ startTime.getMinuteOfHour() + ":"
-						+ startTime.getSecondOfMinute());
+							@Override
+							public void onTimeSet(TimePicker view,
+									int hourOfDay, int minute) {
+								startTime = new LocalTime(hourOfDay, minute);
+								startTimeText = startTime.toString(fmt);
+								startTimeBtn.setText("Start time: "
+										+ startTimeText);
+							};
 
-				hrPkr.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
-
-					@Override
-					public void onValueChange(NumberPicker picker, int oldVal,
-							int newVal) {
-						startTime.withHourOfDay(newVal);
-						timeText.setText(startTime.getChronology().hourOfDay() + ":"
-								+ startTime.getChronology().minuteOfHour() + ":"
-								+ startTime.getChronology().secondOfMinute());
-
-					}
-				});
-				minPkr.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
-
-					@Override
-					public void onValueChange(NumberPicker picker, int oldVal,
-							int newVal) {
-						startTime.withMinuteOfHour(newVal);
-						timeText.setText(startTime.getChronology().hourOfDay() + ":"
-								+ startTime.getChronology().minuteOfHour() + ":"
-								+ startTime.getChronology().secondOfMinute());
-
-					}
-				});
-				secPkr.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
-
-					@Override
-					public void onValueChange(NumberPicker picker, int oldVal,
-							int newVal) {
-						startTime.withSecondOfMinute(newVal);
-						timeText.setText(startTime.getChronology().hourOfDay() + ":"
-								+ startTime.getChronology().minuteOfHour() + ":"
-								+ startTime.getChronology().secondOfMinute());
-
-					}
-				});
-
-				setBtn.setOnClickListener(new View.OnClickListener() {
-
-					@Override
-					public void onClick(View v) {
-						startTime = new LocalTime(hrPkr.getValue(), minPkr
-								.getValue(), secPkr.getValue());
-						startTimeBtn.setText(startTime.getChronology().hourOfDay().getAsShortText(2,Locale.getDefault()) + ":"
-								+ startTime.getChronology().minuteOfHour().getAsShortText(2,Locale.getDefault()) + ":"
-								+ startTime.getChronology().secondOfMinute().getAsShortText(2,Locale.getDefault()));
-
-						dialog.dismiss();
-					}
-				});
-
-				// if button is clicked, close the custom dialog
-				cancelBtn.setOnClickListener(new View.OnClickListener() {
-					@Override
-					public void onClick(View v) {
-						startTimeBtn.setText("Start time: " + startTime.getHourOfDay() + ":"
-								+ startTime.getMinuteOfHour() + ":"
-								+ startTime.getSecondOfMinute());
-						dialog.dismiss();
-					}
-				});
+						}, currentTime.getHourOfDay(), currentTime
+								.getMinuteOfHour(), false);
 
 				dialog.show();
+
 			}
 		});
 
 		endTimeBtn.setOnClickListener(new View.OnClickListener() {
-
 			@Override
 			public void onClick(View v) {
+				LocalTime currentTime = startTime;
+				final DateTimeFormatter fmt = DateTimeFormat
+						.forPattern("hh:mm aa");
 				// custom dialog
-				final Dialog dialog = new Dialog(getActivity());
-				dialog.setContentView(R.layout.time_picker_dialog);
-				dialog.setTitle("Select starting time");
+				final TimePickerDialog dialog = new TimePickerDialog(
+						getActivity(),
+						new TimePickerDialog.OnTimeSetListener() {
 
-				Button setBtn = (Button) dialog.findViewById(R.id.setButton);
-				Button cancelBtn = (Button) dialog
-						.findViewById(R.id.cancelButton);
-				final NumberPicker hrPkr = (NumberPicker) dialog
-						.findViewById(R.id.hourPicker);
-				final NumberPicker minPkr = (NumberPicker) dialog
-						.findViewById(R.id.minutePicker);
-				final NumberPicker secPkr = (NumberPicker) dialog
-						.findViewById(R.id.secondPicker);
-				hrPkr.setMaxValue(23);
-				hrPkr.setMinValue(0);
-				minPkr.setMaxValue(59);
-				minPkr.setMinValue(0);
-				secPkr.setMaxValue(59);
-				secPkr.setMinValue(0);
-				int currentSec = 0;
-				int currentMin = 0;
-				int currentHour = 0;
+							@Override
+							public void onTimeSet(TimePicker view,
+									int hourOfDay, int minute) {
+								endTime = new LocalTime(hourOfDay, minute);
+								endTimeText = endTime.toString(fmt);
+								endTimeBtn.setText("End time: " + endTimeText);
+							};
 
-				final Calendar myTimeSelection = Calendar.getInstance();
-				myTimeSelection.set(Calendar.SECOND, currentSec);
-				myTimeSelection.set(Calendar.MINUTE, currentMin);
-				myTimeSelection.set(Calendar.HOUR, currentHour);
-
-				final TextView timeText = (TextView) dialog
-						.findViewById(R.id.timetxt);
-				timeText.setText(myTimeSelection.get(Calendar.HOUR_OF_DAY)
-						+ ":" + myTimeSelection.get(Calendar.MINUTE) + ":"
-						+ myTimeSelection.get(Calendar.SECOND));
-
-				hrPkr.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
-
-					@Override
-					public void onValueChange(NumberPicker picker, int oldVal,
-							int newVal) {
-						;
-						myTimeSelection.set(Calendar.HOUR_OF_DAY, newVal);
-
-						timeText.setText(myTimeSelection
-								.get(Calendar.HOUR_OF_DAY)
-								+ ":"
-								+ myTimeSelection.get(Calendar.MINUTE)
-								+ ":"
-								+ myTimeSelection.get(Calendar.SECOND));
-					}
-				});
-				minPkr.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
-
-					@Override
-					public void onValueChange(NumberPicker picker, int oldVal,
-							int newVal) {
-						myTimeSelection.set(Calendar.MINUTE, newVal);
-						timeText.setText(myTimeSelection
-								.get(Calendar.HOUR_OF_DAY)
-								+ ":"
-								+ myTimeSelection.get(Calendar.MINUTE)
-								+ ":"
-								+ myTimeSelection.get(Calendar.SECOND));
-
-					}
-				});
-				secPkr.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
-
-					@Override
-					public void onValueChange(NumberPicker picker, int oldVal,
-							int newVal) {
-						myTimeSelection.set(Calendar.SECOND, newVal);
-						timeText.setText(myTimeSelection
-								.get(Calendar.HOUR_OF_DAY)
-								+ ":"
-								+ myTimeSelection.get(Calendar.MINUTE)
-								+ ":"
-								+ myTimeSelection.get(Calendar.SECOND));
-
-					}
-				});
-
-				setBtn.setOnClickListener(new View.OnClickListener() {
-
-					@Override
-					public void onClick(View v) {
-						endTime = new LocalTime(hrPkr.getValue(), minPkr
-								.getValue(), secPkr.getValue());
-						endTimeBtn.setText("End time: "
-								+ myTimeSelection.get(Calendar.HOUR_OF_DAY)
-								+ ":" + myTimeSelection.get(Calendar.MINUTE)
-								+ ":" + myTimeSelection.get(Calendar.SECOND));
-						dialog.dismiss();
-					}
-				});
-
-				// if button is clicked, close the custom dialog
-				cancelBtn.setOnClickListener(new View.OnClickListener() {
-					@Override
-					public void onClick(View v) {
-						startTimeBtn.setText("End time: "
-								+ myTimeSelection.get(Calendar.HOUR_OF_DAY)
-								+ ":" + myTimeSelection.get(Calendar.MINUTE)
-								+ ":" + myTimeSelection.get(Calendar.SECOND));
-						dialog.dismiss();
-					}
-				});
+						}, currentTime.getHourOfDay(), currentTime
+								.getMinuteOfHour(), false);
 
 				dialog.show();
+
 			}
 		});
 
@@ -591,7 +436,30 @@ public class event_report_fragment extends Fragment {
 						.findViewById(R.id.saturdayCB);
 				CheckBox sundayCB = (CheckBox) dialog
 						.findViewById(R.id.sundayCB);
-
+				mondayCB.setChecked(false);
+				tuesdayCB.setChecked(false);
+				wednesdayCB.setChecked(false);
+				thursdayCB.setChecked(false);
+				fridayCB.setChecked(false);
+				saturdayCB.setChecked(false);
+				sundayCB.setChecked(false);
+				for (int i = 0; i < activeDaysArrayList.size(); i++) {
+					if (activeDaysArrayList.get(i).equals("Sunday")) {
+						sundayCB.setChecked(true);
+					} else if (activeDaysArrayList.get(i).equals("Monday")) {
+						mondayCB.setChecked(true);
+					} else if (activeDaysArrayList.get(i).equals("Tuesday")) {
+						tuesdayCB.setChecked(true);
+					} else if (activeDaysArrayList.get(i).equals("Wednesday")) {
+						wednesdayCB.setChecked(true);
+					} else if (activeDaysArrayList.get(i).equals("Thursday")) {
+						thursdayCB.setChecked(true);
+					} else if (activeDaysArrayList.get(i).equals("Friday")) {
+						fridayCB.setChecked(true);
+					} else if (activeDaysArrayList.get(i).equals("Saturday")) {
+						saturdayCB.setChecked(true);
+					}
+				}
 				mondayCB.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 
 					@Override
@@ -686,8 +554,10 @@ public class event_report_fragment extends Fragment {
 					public void onCheckedChanged(CompoundButton buttonView,
 							boolean isChecked) {
 						if (isChecked) {
+							// Toast.makeText(getActivity().getBaseContext(),"Sunday Added",Toast.LENGTH_SHORT).show();;
 							activeDaysArrayList.add("Sunday");
 						} else {
+							// Toast.makeText(getActivity().getBaseContext(),"Sunday removed",Toast.LENGTH_SHORT).show();
 							activeDaysArrayList.remove(activeDaysArrayList
 									.indexOf("Sunday"));
 						}
@@ -713,7 +583,7 @@ public class event_report_fragment extends Fragment {
 				final Dialog dialog = new Dialog(getActivity());
 				dialog.setContentView(R.layout.generic_selection_wheel);
 				dialog.setTitle("Select a contact");
-				ArrayAdapter<ContactInfo> contactSelectionAdapter = new ArrayAdapter<ContactInfo>(
+				final ArrayAdapter<ContactInfo> contactSelectionAdapter = new ArrayAdapter<ContactInfo>(
 						getActivity().getBaseContext(),
 						android.R.layout.simple_spinner_item, globaldata
 								.getContactInfoList());
@@ -723,7 +593,7 @@ public class event_report_fragment extends Fragment {
 
 				Button dialogButtonOK = (Button) dialog
 						.findViewById(R.id.dialogButtonOK);
-				Spinner selectionWheel = (Spinner) dialog
+				final Spinner selectionWheel = (Spinner) dialog
 						.findViewById(R.id.genericselectionspinner);
 
 				selectionWheel.setAdapter(contactSelectionAdapter);
@@ -737,6 +607,7 @@ public class event_report_fragment extends Fragment {
 								// check to see if the contact has already been
 								// selected, if not add it. If it has do
 								// nothing.
+
 								if (!activeContactsArrayList
 										.contains(globaldata
 												.getContactInfoList().get(
@@ -745,12 +616,17 @@ public class event_report_fragment extends Fragment {
 											.add(globaldata
 													.getContactInfoList().get(
 															position));
-									Log.v("Event Contact Add",
-											"Contact not found, adding to list!");
-								} else {
-									Log.v("Event Contact Found",
-											"Contact match found, not re-adding to list.");
+
+								} else if (activeContactsArrayList
+										.contains(globaldata
+												.getContactInfoList().get(
+														position))) {
+									activeContactsArrayList.remove(position);
+
 								}
+								selectContactsBtn
+										.setText(activeContactsArrayList.size()
+												+ " contacts selected");
 							}
 
 							@Override
@@ -764,6 +640,7 @@ public class event_report_fragment extends Fragment {
 				dialogButtonOK.setOnClickListener(new View.OnClickListener() {
 					@Override
 					public void onClick(View v) {
+
 						dialog.dismiss();
 					}
 				});
@@ -887,7 +764,26 @@ public class event_report_fragment extends Fragment {
 				/* timeSpinner.setAdapter(timeToSendSpinnerAdapter); */
 				frequencySpinner.setAdapter(frequencySpinnerAdapter);
 				dayToSendSpinner.setAdapter(dayToSendSpinnerAdapter);
+				
 
+				dateToSendSpinner
+						.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+							@Override
+							public void onItemSelected(AdapterView<?> parent,
+									View view, int position, long id) {
+								// TODO Auto-generated method stub
+		
+
+							}
+
+							@Override
+							public void onNothingSelected(AdapterView<?> parent) {
+								// TODO Auto-generated method stub
+
+							}
+						});
+				
 				frequencySpinner
 						.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
@@ -974,12 +870,42 @@ public class event_report_fragment extends Fragment {
 							whenToSendBtn.setText("When To Send: " + "Weekly");
 						} else {
 							// Monthly
-							myReportTimeSpec = new ReportTimeSpec("Monthly",
-									new LocalTime(
-											myTimePicker.getCurrentHour(),
-											myTimePicker.getCurrentMinute()),
-									dayToSendNum);
-							whenToSendBtn.setText("When To Send: " + "Weekly");
+							if(dateToSendSpinner.getSelectedItem().equals("1st")){
+								myReportTimeSpec = new ReportTimeSpec("Monthly",
+										new LocalTime(
+												myTimePicker.getCurrentHour(),
+												myTimePicker.getCurrentMinute()),
+												"1st");
+							}else if(dateToSendSpinner.getSelectedItem().equals("15th")){
+								
+								myReportTimeSpec = new ReportTimeSpec("Monthly",
+										new LocalTime(
+												myTimePicker.getCurrentHour(),
+												myTimePicker.getCurrentMinute()),
+												"15th");
+							}else if(dateToSendSpinner.getSelectedItem().equals("Last Day")){
+								myReportTimeSpec = new ReportTimeSpec("Monthly",
+										new LocalTime(
+												myTimePicker.getCurrentHour(),
+												myTimePicker.getCurrentMinute()),
+												"Last Day");
+							}else if(dateToSendSpinner.getSelectedItem().equals("First Monday")){
+								myReportTimeSpec = new ReportTimeSpec("Monthly",
+										new LocalTime(
+												myTimePicker.getCurrentHour(),
+												myTimePicker.getCurrentMinute()),
+												"First Monday");
+							}else //"Last Friday"
+								{
+								myReportTimeSpec = new ReportTimeSpec("Monthly",
+										new LocalTime(
+												myTimePicker.getCurrentHour(),
+												myTimePicker.getCurrentMinute()),
+												"Last Friday");
+						
+								}
+						
+							whenToSendBtn.setText("When To Send: " + "Monthly - " + myReportTimeSpec.getSendDateInfo());
 						}
 
 						dialog.dismiss();

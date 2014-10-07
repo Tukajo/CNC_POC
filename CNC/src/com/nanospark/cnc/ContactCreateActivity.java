@@ -29,7 +29,7 @@ public class ContactCreateActivity extends Activity implements
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.contact_creation_layout);
-		nameET = (EditText) findViewById(R.id.contactNameET);
+		nameET = (EditText) findViewById(R.id.eventnameet);
 		phoneET = (EditText) findViewById(R.id.contactPhoneET);
 		emailET = (EditText) findViewById(R.id.contactEmailET);
 		carrierSpinner = (Spinner) findViewById(R.id.contactCarrierSpinner);

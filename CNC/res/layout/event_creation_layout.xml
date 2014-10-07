@@ -17,18 +17,15 @@
             android:layout_weight="1"
             android:text="Event Name:"
             android:textAppearance="?android:attr/textAppearanceMedium" />
-
-        <EditText
-            android:id="@+id/contactNameET"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="enter name"
-            android:inputType="text" >
-
-            <requestFocus />
-        </EditText>
     </TableRow>
+
+    <EditText
+        android:id="@+id/eventnameet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="enter name"
+        android:inputType="text" />
 
     <TableRow
         android:id="@+id/tableRow2"
@@ -45,7 +42,7 @@
     </TableRow>
 
     <EditText
-        android:id="@+id/editText1"
+        android:id="@+id/eventdescriptionet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
