@@ -1,28 +1,40 @@
 package com.nanospark.cnc;
 
-import android.support.v4.app.Fragment;
+import java.util.ArrayList;
+
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBarActivity;
+import android.content.SharedPreferences;
 //import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
+
 public class MainActivity extends ActionBarActivity {
+	SharedPreferences prefs = null;
+	
 	GridLayout_Fragment profileGridFragment = new GridLayout_Fragment();
 	EventList_Fragment eventListFragment = new EventList_Fragment();
 	ContactList_Fragment contactListFragment = new ContactList_Fragment();
 	FragmentManager transactionManager;
 	FragmentTransaction transaction;
 	CustomIOIO customioio;
-
+	GlobalData globaldata = GlobalData.getInstance();
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		setTheme(R.style.AppTheme);
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-
+		prefs = getSharedPreferences("com.nanospark.cnc", MODE_PRIVATE);
+		
+		Log.v("retrieving data", "Retrieving global data");
+		//if(prefs.getBoolean("firstrun", true)){
+			globaldata.retrieveGlobalDataFromStorage(getBaseContext());
+		//	prefs.edit().putBoolean("firstrun", false).commit();
+		//}
 		//insert the initial fragment for when the app boots.
 		 transactionManager = getSupportFragmentManager();
 		transaction = transactionManager.beginTransaction();
@@ -32,9 +44,15 @@ public class MainActivity extends ActionBarActivity {
 		 customioio = (CustomIOIO) getApplicationContext();
 		 customioio.create();
 		 customioio.setTheme(R.style.AppTheme);
-
+		 
 	}
-
+	
+	 @Override
+	    protected void onPause(){
+	       super.onPause();
+	      globaldata.storeGlobalData(getBaseContext());
+	    }
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.

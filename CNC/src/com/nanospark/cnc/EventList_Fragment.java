@@ -1,5 +1,7 @@
 package com.nanospark.cnc;
 
+import java.util.ArrayList;
+
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -29,8 +31,12 @@ public class EventList_Fragment extends Fragment {
 		eventListView = (ListView) rootView.findViewById(android.R.id.list);
 		addNewEventBtn = (Button) rootView.findViewById(R.id.addListItem);
 		
-	     ArrayAdapter<Event> eventListAdapter = new ArrayAdapter<Event>(inflater.getContext(),
-	    		  android.R.layout.simple_list_item_1, globaldata.getEventInfoList());
+		//combines the two report/notification arraylists and sets the globaldata arraylist equal to this one.
+		//The reason they are separated is for storage purposes because JSON cannot parse an arraylist with two different object types.
+	
+		
+	     ArrayAdapter<ReportEvent> eventListAdapter = new ArrayAdapter<ReportEvent>(inflater.getContext(),
+	    		  android.R.layout.simple_list_item_1, globaldata.getReportEventInfoList());
 		
 	     eventListAdapter.notifyDataSetInvalidated();
 	     eventListAdapter.notifyDataSetChanged();

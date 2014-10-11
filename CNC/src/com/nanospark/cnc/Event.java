@@ -22,6 +22,9 @@ public class Event {
 	String formatChoice;
 	ReportTimeSpec reportTimingConfigs;
 
+	public Event(){
+		
+	}
 	public Event(String eventTitle, String eventDescription, int assignedPin, String trackingType,
 			LocalDate startDate, LocalDate endDate, boolean watchAllDay,
 			LocalTime startTime, LocalTime endTime, ArrayList<String> selectedDays,

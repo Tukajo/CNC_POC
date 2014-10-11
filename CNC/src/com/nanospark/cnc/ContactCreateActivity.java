@@ -35,7 +35,7 @@ public class ContactCreateActivity extends Activity implements
 		carrierSpinner = (Spinner) findViewById(R.id.contactCarrierSpinner);
 		contactCancelBtn = (Button) findViewById(R.id.eventCreateCancelBtn);
 		contactCreateBtn = (Button) findViewById(R.id.eventCreateCreateBtn);
-
+		globaldata.retrieveGlobalDataFromStorage(getBaseContext());
 		// check to see if this is an edit event
 		Bundle extras = getIntent().getExtras();
 		if (extras != null) {
@@ -58,6 +58,7 @@ public class ContactCreateActivity extends Activity implements
 				startActivity(myCancelIntent);
 			}
 		});
+		
 
 		contactCreateBtn.setOnClickListener(new View.OnClickListener() {
 
@@ -112,6 +113,14 @@ public class ContactCreateActivity extends Activity implements
 		carrierSpinner.setOnItemSelectedListener(this);
 
 	}
+	
+	 @Override
+	    protected void onPause(){
+	       super.onPause();
+	      globaldata.storeGlobalData(getBaseContext());
+	    }
+	
+	
 
 	@Override
 	public void onItemSelected(AdapterView<?> parent, View view, int pos,
@@ -124,4 +133,5 @@ public class ContactCreateActivity extends Activity implements
 	public void onNothingSelected(AdapterView<?> parent) {
 
 	}
+	
 }

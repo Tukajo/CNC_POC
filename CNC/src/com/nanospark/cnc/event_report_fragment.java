@@ -139,7 +139,7 @@ public class event_report_fragment extends Fragment {
 			@Override
 			public void onClick(View v) {
 
-				globaldata.getEventInfoList().add(
+				globaldata.getReportEventInfoList().add(
 						new ReportEvent(((EventCreateActivity) getActivity())
 								.getEventTitle(),
 								((EventCreateActivity) getActivity())
@@ -149,6 +149,8 @@ public class event_report_fragment extends Fragment {
 								activeDaysArrayList, activeContactsArrayList,
 								frequencyTypeChosen, myReportTimeSpec));
 
+				
+				
 				// Return to the main activity.
 				Intent myReturningIntent = new Intent(getActivity()
 						.getBaseContext(), MainActivity.class);

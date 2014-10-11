@@ -38,6 +38,7 @@ public class EventCreateActivity extends FragmentActivity {
 		notificationRB = (RadioButton) findViewById(R.id.radio1);
 		enterEventNameET = (EditText) findViewById(R.id.eventnameet);
 		enterEventDescriptionET = (EditText) findViewById(R.id.eventdescriptionet);
+		globaldata.retrieveGlobalDataFromStorage(getBaseContext());
 /*		createEventBtn = (Button) findViewById(R.id.eventCreateCreateBtn);
 		cancelEventBtn = (Button) findViewById(R.id.eventCreateCancelBtn);*/
 		
@@ -102,4 +103,9 @@ public class EventCreateActivity extends FragmentActivity {
 	public String getEventDescription(){
 		return enterEventDescriptionET.getText().toString();
 	}
+	@Override
+    protected void onPause(){
+       super.onPause();
+      globaldata.storeGlobalData(getBaseContext());
+    }
 }

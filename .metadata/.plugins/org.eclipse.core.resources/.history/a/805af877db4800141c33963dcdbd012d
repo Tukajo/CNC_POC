@@ -1,7 +1,0 @@
-package com.nanospark.cnc;
-
-import android.app.Fragment;
-
-public class EventList_Fragment extends Fragment {
-
-}

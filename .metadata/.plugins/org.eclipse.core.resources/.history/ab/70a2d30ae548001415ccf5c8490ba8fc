@@ -1,9 +1,0 @@
-package com.nanospark.cnc;
-
-public class Pin {
-	String name;
-	Int number;
-	public Pin(){
-		
-	}
-}

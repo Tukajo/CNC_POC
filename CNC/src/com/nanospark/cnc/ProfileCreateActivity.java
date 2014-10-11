@@ -34,7 +34,7 @@ public class ProfileCreateActivity extends Activity implements OnItemSelectedLis
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.profile_creation_layout);
-
+		globaldata.retrieveGlobalDataFromStorage(getBaseContext());
 		enterProfileNameET = (EditText) findViewById(R.id.profilenameedittext);
 		
 		pickColorButton = (Button) findViewById(R.id.pickcolor);
@@ -141,5 +141,10 @@ public class ProfileCreateActivity extends Activity implements OnItemSelectedLis
 	public void onNothingSelected(AdapterView<?> arg0) {
 		
 	}
+	@Override
+    protected void onPause(){
+       super.onPause();
+      globaldata.storeGlobalData(getBaseContext());
+    }
 
 }
