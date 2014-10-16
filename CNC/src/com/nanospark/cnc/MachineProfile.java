@@ -9,6 +9,7 @@ public class MachineProfile {
 
 	public MachineProfile(String profileName, RGBClass RGBVals, ArrayList<Event> attachedEvents) {
 		this.profileName = profileName;
+		
 		this.RGBVals = RGBVals;
 		this.attachedEvents = attachedEvents;
 	}

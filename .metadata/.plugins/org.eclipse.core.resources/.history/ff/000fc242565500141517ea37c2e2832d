@@ -1,0 +1,19 @@
+package com.nanospark.cnc;
+
+import java.util.ArrayList;
+
+import org.joda.time.LocalDate;
+import org.joda.time.LocalTime;
+public class ReportEvent extends Event {
+
+	public ReportEvent(String eventTitle,String eventDescription,int assignedPin, String trackingType,
+			 boolean watchAllDay,
+			 ArrayList<String> selectedDays,
+			ArrayList<ContactInfo> selectedContact, String formatChoice,
+			ReportTimeSpec reportTimingConfig) {
+		super(eventTitle,eventDescription, assignedPin, trackingType, watchAllDay, selectedDays, selectedContact, formatChoice,
+				reportTimingConfig);
+		// TODO Auto-generated constructor stub
+	}
+
+}

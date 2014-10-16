@@ -4,11 +4,15 @@ package com.nanospark.cnc;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 
+import org.joda.time.LocalDate;
+import org.joda.time.LocalTime;
+
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
 public class GlobalData {
@@ -96,8 +100,11 @@ public class GlobalData {
 	public void retrieveGlobalDataFromStorage(Context context){
 		mPrefs = context.getSharedPreferences("com.nanospark.cnc", Context.MODE_PRIVATE);
 		if(mPrefs.contains("machineProfileListJSONData")){
-			
-			Gson gson = new Gson();
+			 final GsonBuilder builder = new GsonBuilder()
+		       .registerTypeAdapter(LocalDate.class, new LocalDateSerializer())
+		       .registerTypeAdapter(LocalTime.class, new LocalTimeSerializer());
+		    final Gson gson = builder.create();  
+		    
 			String machineProfileListJSON = mPrefs.getString("machineProfileListJSONData", "");
 			String contactInfoListJSON = mPrefs.getString("contactInfoListJSONData", "");
 			String reportEventInfoListJSON = mPrefs.getString("reportEventInfoListJSONData", "");
