@@ -34,15 +34,15 @@ public class EventCreateActivity extends FragmentActivity {
 		setContentView(R.layout.event_creation_layout);
 		
 		selectEventType = (RadioGroup) findViewById(R.id.radioGroup1);
-		reportRB = (RadioButton) findViewById(R.id.radio0);
-		notificationRB = (RadioButton) findViewById(R.id.radio1);
+		reportRB = (RadioButton) findViewById(R.id.radio1);
+		notificationRB = (RadioButton) findViewById(R.id.radio0);
 		enterEventNameET = (EditText) findViewById(R.id.eventnameet);
 		enterEventDescriptionET = (EditText) findViewById(R.id.eventdescriptionet);
-		globaldata.retrieveGlobalDataFromStorage(getBaseContext());
 /*		createEventBtn = (Button) findViewById(R.id.eventCreateCreateBtn);
 		cancelEventBtn = (Button) findViewById(R.id.eventCreateCancelBtn);*/
 		
 		eventFragment = new event_report_fragment();
+
 		transaction = transactionManager.beginTransaction();
 		transaction.replace(R.id.event_fragment_frame, eventFragment);
 		transaction.addToBackStack(null);
@@ -69,15 +69,13 @@ public class EventCreateActivity extends FragmentActivity {
 			
 			@Override
 			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-				eventFragment = new event_report_fragment();
+				eventFragment = new event_notification_fragment();
 				transaction = transactionManager.beginTransaction();
 				transaction.replace(R.id.event_fragment_frame, eventFragment);
 				transaction.addToBackStack(null);
 				transaction.commit();
 				notificationIsChecked = isChecked;
-			
 			}
-				
 		});
 		
 		reportRB.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -103,9 +101,4 @@ public class EventCreateActivity extends FragmentActivity {
 	public String getEventDescription(){
 		return enterEventDescriptionET.getText().toString();
 	}
-	@Override
-    protected void onPause(){
-       super.onPause();
-      globaldata.storeGlobalData(getBaseContext());
-    }
 }
