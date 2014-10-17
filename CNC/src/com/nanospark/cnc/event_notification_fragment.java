@@ -184,15 +184,6 @@ public class event_notification_fragment extends Fragment{
 			
 			@Override
 			public void onClick(View v) {
-				final Dialog dialog = new Dialog(getActivity());
-				dialog.setContentView(R.layout.notify_when_dialog);
-				dialog.setTitle("Select Stuff");
-
-				Button button1 = (Button) dialog.findViewById(R.id.button1);
-				EditText editText1 = (EditText) dialog.findViewById(R.id.editText1);
-				final Spinner spinner2 = (Spinner) dialog
-						.findViewById(R.id.spinner2);
-
 
 				
 			}

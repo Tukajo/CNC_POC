@@ -2,6 +2,7 @@
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/backgroundspark3"
     android:orientation="vertical" >
 
     <TextView
@@ -9,6 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+    	android:textColor="#FFF"
         android:text="Name:"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -23,6 +25,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_weight="1"
+            android:textColor="#FFF"
             android:ems="10"
             android:hint="@string/contactlayoutenternamehint"
             android:inputType="textPersonName" >
@@ -36,6 +39,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:textColor="#FFF"
         android:text="Phone:"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -50,6 +54,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_weight="1"
+            android:textColor="#FFF"
             android:ems="10"
             android:hint="(555) 0100"
             android:inputType="phone" />
@@ -61,6 +66,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:textColor="#FFF"
         android:text="E-mail:"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -75,6 +81,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_weight="1"
+            android:textColor="#FFF"
             android:ems="10"
             android:hint="user@domain.com"
             android:inputType="textEmailAddress" />
@@ -86,6 +93,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:textColor="#FFF"
         android:text="carrier:"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -99,6 +107,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:textColor="#FFF"
             android:layout_weight="1" />
 
     </TableRow>
@@ -115,6 +124,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:layout_weight="1"
+            android:textColor="#FFF"
             android:text="Cancel" />
 
         <Button
@@ -123,6 +133,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:layout_weight="1"
+            android:textColor="#FFF"
             android:text="Create" />
     </TableRow>
 

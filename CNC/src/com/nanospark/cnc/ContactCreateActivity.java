@@ -102,16 +102,15 @@ public class ContactCreateActivity extends Activity implements
 				}
 			}
 		});
+		
 		ArrayAdapter<CharSequence> carrierAdapter = ArrayAdapter
-				.createFromResource(this, R.array.carrier_options,
-						android.R.layout.simple_spinner_item);
+				.createFromResource(this, R.array.carrier_options, R.layout.spinner_item);
 		carrierAdapter
 				.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
 		carrierSpinner.setAdapter(carrierAdapter);
 
 		carrierSpinner.setOnItemSelectedListener(this);
-
 	}
 	
 	 @Override

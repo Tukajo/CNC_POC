@@ -19,6 +19,7 @@
                 android:id="@+id/reportparametersheader"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="#FFF"
                 android:text="Notification Parameters:"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
         </TableRow>
@@ -33,6 +34,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
+                android:textColor="#FFF"
                 android:layout_weight="1"
                 android:text="Input #:" />
         </TableRow>
@@ -46,6 +48,7 @@
                 android:id="@+id/notifywhenbutton"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:textColor="#FFF"
                 android:layout_weight="1"
                 android:text="Notify When" />
         </TableRow>
@@ -59,6 +62,7 @@
                 android:id="@+id/changeexistsforbutton"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:textColor="#FFF"
                 android:layout_weight="1"
                 android:text="Change exits for" />
 
@@ -73,6 +77,7 @@
                 android:id="@+id/contactsbutton"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:textColor="#FFF"
                 android:layout_weight="1"
                 android:text="Contacts" />
             
@@ -87,12 +92,14 @@
                 android:id="@+id/emailcheckbox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="#FFF"
                 android:text="Email" />
 
             <CheckBox
                 android:id="@+id/textcheckbox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="#FFF"
                 android:text="Text Message" />
 
         </TableRow>
@@ -106,6 +113,7 @@
                 android:id="@+id/messagebutton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="#FFF"
                 android:layout_weight="1" 
                 android:text="Message:" />
 
@@ -121,6 +129,7 @@
                 android:id="@+id/whenactiveheader"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="#FFF"
                 android:text="When Active:"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
             
@@ -135,6 +144,7 @@
                 android:id="@+id/alldaytoggle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="#FFF"
                 android:layout_weight="1" 
                 android:textOff="All Day: Off"
                 android:textOn="All Day: On" />
@@ -150,6 +160,7 @@
                 android:id="@+id/starttimebutton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="#FFF"
                 android:layout_weight="1" 
                 android:text="Start Time" />
 
@@ -164,6 +175,7 @@
                 android:id="@+id/endtimebutton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="#FFF"
                 android:layout_weight="1" 
                 android:text="End Time" />
 
@@ -178,6 +190,7 @@
                 android:id="@+id/daysbutton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="#FFF"
                 android:layout_weight="1" 
                 android:text="Days (default all)" />
 
@@ -193,6 +206,7 @@
                 android:id="@+id/cancelbutton"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:textColor="#FFF"
                 android:layout_weight="1"
                 android:text="Cancel" />
 
@@ -200,6 +214,7 @@
                 android:id="@+id/createbutton"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:textColor="#FFF"
                 android:layout_weight="1"
                 android:text="Create" />
         </TableRow>

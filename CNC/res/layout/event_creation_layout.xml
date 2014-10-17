@@ -2,6 +2,7 @@
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/backgroundspark3"
     android:orientation="vertical" >
 
     <TableRow
@@ -16,6 +17,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_weight="1"
+            android:textColor="#FFF"
             android:text="Event Name:"
             android:textAppearance="?android:attr/textAppearanceMedium" />
     </TableRow>
@@ -26,6 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:ems="10"
+        android:textColor="#FFF"
         android:hint="enter name"
         android:inputType="text" />
 
@@ -40,6 +43,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_weight="1"
+            android:textColor="#FFF"
             android:text="Description:"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -50,6 +54,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:textColor="#FFF"
         android:ems="10"
         android:hint="enter a description"
         android:inputType="textMultiLine" />
@@ -64,6 +69,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:textColor="#FFF"
             android:text="Event Type:"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -87,6 +93,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight="1"
+                android:textColor="#FFF"
                 android:checked="true"
                 android:text="Report" />
 
@@ -96,6 +103,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight="1"
+                android:textColor="#FFF"
                 android:text="Notification" />
         </RadioGroup>
     </TableRow>
